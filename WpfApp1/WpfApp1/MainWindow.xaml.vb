@@ -38,7 +38,10 @@
     End Sub
 
     Public Sub StrDecrease_Click(sender As Object, e As RoutedEventArgs) Handles StrDecrease.Click
-
+        Strength = Strength - 1
+        StrStat.Text = Strength.ToString
+        MaxStats = MaxStats + 1
+        PointsLeft.Text = MaxStats.ToString
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles IntIncrease.Click
