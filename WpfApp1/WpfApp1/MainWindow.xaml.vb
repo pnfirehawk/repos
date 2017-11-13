@@ -1,6 +1,11 @@
 ﻿Class MainWindow
     Dim Intelligence = 10
     Dim CStrength = 10
+    Dim Constitution = 10
+    Dim Dex = 10
+    Dim Wis = 10
+    Dim Cha = 10
+
     Dim MaxStats = 32
 
     Private Sub ComboBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
@@ -27,37 +32,48 @@
 
 
     End Sub
-    Public Sub StrStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles StrStat.TextChanged
-        Dim stat = Convert.ToInt32(sender.Text)
-
+    Function Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
         If stat >= 17 Then
-            StrIncrease1.IsEnabled = False
+            a.IsEnabled = False
         End If
         If stat <= 9 Then
-            StrDecrease.IsEnabled = False
+            b.IsEnabled = False
         End If
         If stat < 18 Then
-            StrIncrease1.IsEnabled = True
+            a.IsEnabled = True
         End If
         If stat >= 9 Then
-            StrDecrease.IsEnabled = True
+            b.IsEnabled = True
         End If
+    End Function
 
+    Public Sub StrStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles StrStat.TextChanged
+        Dim stat = Convert.ToInt32(sender.Text)
+        Buttonenabled(StrStat.Text, StrIncrease1, StrDecrease)
     End Sub
+
     Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles Intstat.TextChanged
-        Dim stat2 = Convert.ToInt32(sender.Text)
-        If stat2 <= 9 Then
-            IntDecrease.IsEnabled = False
-        End If
-        If stat2 >= 17 Then
-            IntIncrease.IsEnabled = False
-        End If
-        If stat2 < 18 Then
-            IntIncrease.IsEnabled = True
-        End If
-        If stat2 >= 9 Then
-            IntDecrease.IsEnabled = True
-        End If
+        Dim stat = Convert.ToInt32(sender.Text)
+        Buttonenabled(Intstat.Text, IntIncrease, IntDecrease)
+    End Sub
+
+    Public Sub Constat_TextChanged(sender As Object, e As RoutedEventArgs) Handles Constat.TextChanged
+        Dim stat = Convert.ToInt32(sender.Text)
+        Buttonenabled(Constat.Text, ConIncrease, ConDecrease)
+    End Sub
+
+    Public Sub Dexstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles Dexstat.TextChanged
+        Dim stat = Convert.ToInt32(sender.text)
+        Buttonenabled(Dexstat.Text, DexIncrease, DexDecrease)
+    End Sub
+
+    Public Sub WisStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles WisStat.TextChanged
+        Dim stat = Convert.ToInt32(sender.text)
+        Buttonenabled(WisStat.Text, WisIncrease, WisDecrease)
+    End Sub
+    Public Sub ChasStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles ChaStat.TextChanged
+        Dim stat = Convert.ToInt32(sender.text)
+        Buttonenabled(ChaStat.Text, ChaIncrease, ChaDecrease)
     End Sub
 
     Function StatIncrease(ByRef i As Integer, ByVal a As TextBox)
@@ -124,5 +140,35 @@
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles IntDecrease.Click
         StatDecrease(Intelligence, Intstat)
+    End Sub
+
+    Private Sub ConIncrease_Click(sender As Object, e As RoutedEventArgs) Handles ConIncrease.Click
+        StatIncrease(Constitution, Constat)
+    End Sub
+
+    Private Sub ConDecrease_Click(sender As Object, e As RoutedEventArgs) Handles ConDecrease.Click
+        StatDecrease(Constitution, Constat)
+    End Sub
+    Private Sub DexIncrease_Click(sender As Object, e As RoutedEventArgs) Handles DexIncrease.Click
+        StatIncrease(Dex, Dexstat)
+    End Sub
+    Private Sub DexDecrease_Click(sender As Object, e As RoutedEventArgs) Handles DexDecrease.Click
+        StatDecrease(Dex, Dexstat)
+    End Sub
+
+    Private Sub WisIncrease_Click(sender As Object, e As RoutedEventArgs) Handles WisIncrease.Click
+        StatIncrease(Wis, WisStat)
+    End Sub
+
+    Private Sub WisDecrease_Click(sender As Object, e As RoutedEventArgs) Handles WisDecrease.Click
+        StatDecrease(Wis, WisStat)
+    End Sub
+
+    Private Sub ChaIncrease_Click(sender As Object, e As RoutedEventArgs)
+        StatIncrease(Cha, ChaStat)
+    End Sub
+
+    Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs)
+        StatDecrease(Cha, ChaStat)
     End Sub
 End Class
