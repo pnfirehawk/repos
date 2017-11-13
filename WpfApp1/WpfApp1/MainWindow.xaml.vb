@@ -1,6 +1,7 @@
 ﻿Class MainWindow
     Dim Strength = 10
     Dim Intelligence = 10
+    Dim CStrength = 10
     Dim MaxStats = 32
 
     Private Sub ComboBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
@@ -29,19 +30,54 @@
     End Sub
 
 
-
     Public Sub StrIncrease1_Click(sender As Object, e As RoutedEventArgs) Handles StrIncrease1.Click
-        Strength = Strength + 1
-        StrStat.Text = Strength.ToString
-        MaxStats = MaxStats - 1
-        PointsLeft.Text = MaxStats.ToString
+        Select Case CStrength
+            Case 10 To 12
+                CStrength = CStrength + 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats - 1
+                PointsLeft.Text = MaxStats.ToString
+            Case 13 To 15
+                CStrength = CStrength + 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats - 2
+                PointsLeft.Text = MaxStats.ToString
+            Case 16
+                CStrength = CStrength + 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats - 3
+                PointsLeft.Text = MaxStats.ToString
+            Case 17 To 18
+                CStrength = CStrength + 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats - 4
+                PointsLeft.Text = MaxStats.ToString
+        End Select
     End Sub
 
     Public Sub StrDecrease_Click(sender As Object, e As RoutedEventArgs) Handles StrDecrease.Click
-        Strength = Strength - 1
-        StrStat.Text = Strength.ToString
-        MaxStats = MaxStats + 1
-        PointsLeft.Text = MaxStats.ToString
+        Select Case CStrength
+            Case 10 To 13
+                CStrength = CStrength - 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats + 1
+                PointsLeft.Text = MaxStats.ToString
+            Case 14 To 16
+                CStrength = CStrength - 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats + 2
+                PointsLeft.Text = MaxStats.ToString
+            Case 17
+                CStrength = CStrength - 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats + 3
+                PointsLeft.Text = MaxStats.ToString
+            Case 18
+                CStrength = CStrength - 1
+                StrStat.Text = CStrength.ToString
+                MaxStats = MaxStats + 4
+                PointsLeft.Text = MaxStats.ToString
+        End Select
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles IntIncrease.Click
@@ -71,10 +107,27 @@
 
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles IntDecrease.Click
-
-        Intelligence = Intelligence - 1
-        IntStat.Text = Intelligence.ToString
-        MaxStats = MaxStats + 1
-        PointsLeft.Text = MaxStats.ToString
+        Select Case Intelligence
+            Case 10 To 13
+                Intelligence = Intelligence - 1
+                IntStat.Text = Intelligence.ToString
+                MaxStats = MaxStats + 1
+                PointsLeft.Text = MaxStats.ToString
+            Case 14 To 16
+                Intelligence = Intelligence - 1
+                IntStat.Text = Intelligence.ToString
+                MaxStats = MaxStats + 2
+                PointsLeft.Text = MaxStats.ToString
+            Case 17
+                Intelligence = Intelligence - 1
+                IntStat.Text = Intelligence.ToString
+                MaxStats = MaxStats + 3
+                PointsLeft.Text = MaxStats.ToString
+            Case 18
+                Intelligence = Intelligence - 1
+                IntStat.Text = Intelligence.ToString
+                MaxStats = MaxStats + 4
+                PointsLeft.Text = MaxStats.ToString
+        End Select
     End Sub
 End Class
