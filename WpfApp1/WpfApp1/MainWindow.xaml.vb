@@ -1,4 +1,5 @@
 ﻿Class MainWindow
+
     Dim Intelligence = 10
     Dim CStrength = 10
     Dim Constitution = 10
@@ -7,6 +8,7 @@
     Dim Cha = 10
 
     Dim MaxStats = 32
+
 
     Private Sub ComboBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim x = Race.SelectedIndex
@@ -47,9 +49,11 @@
         End If
     End Function
 
+
     Public Sub StrStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles StrStat.TextChanged
         Dim stat = Convert.ToInt32(sender.Text)
         Buttonenabled(StrStat.Text, StrIncrease1, StrDecrease)
+
     End Sub
 
     Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles Intstat.TextChanged
@@ -76,99 +80,108 @@
         Buttonenabled(ChaStat.Text, ChaIncrease, ChaDecrease)
     End Sub
 
-    Function StatIncrease(ByRef i As Integer, ByVal a As TextBox)
+    Function StatIncrease(ByRef i As Integer, ByVal a As TextBox, b As TextBox)
         Select Case i
             Case 1 To 12
                 i = i + 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) / 2).ToString
                 MaxStats = MaxStats - 1
                 PointsLeft.Text = MaxStats.ToString
             Case 13 To 15
                 i = i + 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) / 2).ToString
                 MaxStats = MaxStats - 2
                 PointsLeft.Text = MaxStats.ToString
             Case 16
                 i = i + 1
+                b.Text = ((i - 10) / 2).ToString
                 a.Text = i.ToString
                 MaxStats = MaxStats - 3
                 PointsLeft.Text = MaxStats.ToString
             Case 17 To 18
                 i = i + 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) / 2).ToString
                 MaxStats = MaxStats - 4
                 PointsLeft.Text = MaxStats.ToString
         End Select
 
     End Function
-    Function StatDecrease(ByRef i As Integer, ByVal a As TextBox)
+    Function StatDecrease(ByRef i As Integer, ByVal a As TextBox, ByVal b As TextBox)
         Select Case i
             Case 1 To 13
                 i = i - 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) \ 2)
                 MaxStats = MaxStats + 1
                 PointsLeft.Text = MaxStats.ToString
             Case 14 To 16
                 i = i - 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats + 2
                 PointsLeft.Text = MaxStats.ToString
             Case 17
                 i = i - 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats + 3
                 PointsLeft.Text = MaxStats.ToString
             Case 18
                 i = i - 1
                 a.Text = i.ToString
+                b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats + 4
                 PointsLeft.Text = MaxStats.ToString
         End Select
+
     End Function
 
     Public Sub StrIncrease1_Click(sender As Object, e As RoutedEventArgs) Handles StrIncrease1.Click
-        StatIncrease(CStrength, StrStat)
+        StatIncrease(CStrength, StrStat, StrMod)
     End Sub
 
     Public Sub StrDecrease_Click(sender As Object, e As RoutedEventArgs) Handles StrDecrease.Click
-        StatDecrease(CStrength, StrStat)
+        StatDecrease(CStrength, StrStat, StrMod)
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles IntIncrease.Click
-        StatIncrease(Intelligence, Intstat)
+        StatIncrease(Intelligence, Intstat, StrMod)
 
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles IntDecrease.Click
-        StatDecrease(Intelligence, Intstat)
+        StatDecrease(Intelligence, Intstat, StrMod)
     End Sub
 
     Private Sub ConIncrease_Click(sender As Object, e As RoutedEventArgs) Handles ConIncrease.Click
-        StatIncrease(Constitution, Constat)
+        StatIncrease(Constitution, Constat, ConMod)
     End Sub
 
     Private Sub ConDecrease_Click(sender As Object, e As RoutedEventArgs) Handles ConDecrease.Click
-        StatDecrease(Constitution, Constat)
+        StatDecrease(Constitution, Constat, ConMod)
     End Sub
     Private Sub DexIncrease_Click(sender As Object, e As RoutedEventArgs) Handles DexIncrease.Click
-        StatIncrease(Dex, Dexstat)
+        StatIncrease(Dex, Dexstat, StrMod)
     End Sub
     Private Sub DexDecrease_Click(sender As Object, e As RoutedEventArgs) Handles DexDecrease.Click
-        StatDecrease(Dex, Dexstat)
+        StatDecrease(Dex, Dexstat, StrMod)
     End Sub
 
     Private Sub WisIncrease_Click(sender As Object, e As RoutedEventArgs) Handles WisIncrease.Click
-        StatIncrease(Wis, WisStat)
+        StatIncrease(Wis, WisStat, StrMod)
     End Sub
 
     Private Sub WisDecrease_Click(sender As Object, e As RoutedEventArgs) Handles WisDecrease.Click
-        StatDecrease(Wis, WisStat)
+        StatDecrease(Wis, WisStat, StrMod)
     End Sub
 
     Private Sub ChaIncrease_Click(sender As Object, e As RoutedEventArgs)
-        StatIncrease(Cha, ChaStat)
+        StatIncrease(Cha, ChaStat, StrMod)
     End Sub
 
     Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs)
-        StatDecrease(Cha, ChaStat)
+        StatDecrease(Cha, ChaStat, StrMod)
     End Sub
 End Class

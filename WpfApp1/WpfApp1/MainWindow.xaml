@@ -5,41 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid x:Name="MainGrid">
-        <ComboBox x:Name="Race" HorizontalAlignment="Left" Margin="40,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem x:Name="Test_Race1" Content="Test Race1" HorizontalAlignment="Left" Width="118"/>
+        Title="MainWindow" Height="369.666" Width="571.333">
+    <Grid x:Name="MainGrid" Cursor="" Margin="0,0,-1.333,1" RenderTransformOrigin="0.505,0.457">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="137*"/>
+            <RowDefinition Height="202*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140*"/>
+            <ColumnDefinition Width="143*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox x:Name="Race" HorizontalAlignment="Left" Margin="41,54,0,0" VerticalAlignment="Top" Width="77" SelectionChanged="ComboBox_SelectionChanged" Height="18">
+            <ComboBoxItem x:Name="Test_Race1" Content="Test Race1" HorizontalAlignment="Left" Width="118" Cursor="" AutomationProperties.IsRowHeader="True" />
             <ComboBoxItem x:Name="Test_Race2" Content="Test Race2" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="Test_Race3" Content="Test Race3" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
-        <ComboBox x:Name="Class" HorizontalAlignment="Left" Margin="40,37,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged_1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="9,37,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top"/>
-        <TextBlock x:Name="STR" HorizontalAlignment="Left" Margin="176,10,0,0" TextWrapping="Wrap" Text="STR:" VerticalAlignment="Top"/>
-        <Button x:Name="StrIncrease1" Content="+" HorizontalAlignment="Left" Margin="223,11,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True"/>
-        <Button x:Name="StrDecrease" Content="-" HorizontalAlignment="Left" Margin="236,11,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBlock x:Name="Int" HorizontalAlignment="Left" Margin="176,73,0,0" TextWrapping="Wrap" Text="INT:" VerticalAlignment="Top" RenderTransformOrigin="0.467,0.11"/>
-        <Button x:Name="IntIncrease" Content="+" HorizontalAlignment="Left" Margin="223,73,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True" RenderTransformOrigin="1.185,-1.275"/>
-        <Button x:Name="IntDecrease" Content="-" HorizontalAlignment="Left" Margin="236,73,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="319,16,0,0" TextWrapping="Wrap" Text="Points Left" VerticalAlignment="Top"/>
-        <TextBlock x:Name="PointsLeft" HorizontalAlignment="Left" Margin="377,16,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top"/>
-        <TextBox x:Name="StrStat" HorizontalAlignment="Left" Height="19" Margin="198,9,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.977,-1.79"/>
-        <TextBox x:Name="Intstat" HorizontalAlignment="Left" Height="19" Margin="198,72,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.977,-1.79"/>
-        <TextBlock x:Name="Con" HorizontalAlignment="Left" Margin="174,30,0,0" TextWrapping="Wrap" Text="Con:" VerticalAlignment="Top" RenderTransformOrigin="0.556,2.448"/>
-        <Button x:Name="ConIncrease" Content="+" HorizontalAlignment="Left" Margin="223,32,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True" RenderTransformOrigin="1.185,-1.275"/>
-        <Button x:Name="ConDecrease" Content="-" HorizontalAlignment="Left" Margin="236,32,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBox x:Name="Constat" HorizontalAlignment="Left" Height="18" Margin="198,30,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="174,51,0,0" TextWrapping="Wrap" Text="Dex:" VerticalAlignment="Top" Width="25" Height="17" RenderTransformOrigin="-0.475,0.632"/>
-        <Button x:Name="DexIncrease" Content="+" HorizontalAlignment="Left" Margin="223,52,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <Button x:Name="DexDecrease" Content="-" HorizontalAlignment="Left" Margin="236,52,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBox x:Name="Dexstat" HorizontalAlignment="Left" Height="16" Margin="198,51,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.879,0.535"/>
-        <TextBlock HorizontalAlignment="Left" Margin="176,94,0,0" TextWrapping="Wrap" Text="Wis:" VerticalAlignment="Top" Width="23" Height="16"/>
-        <Button x:Name="WisIncrease" Content="+" HorizontalAlignment="Left" Margin="223,94,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <Button x:Name="WisDecrease" Content="-" HorizontalAlignment="Left" Margin="236,94,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="174,115,0,0" TextWrapping="Wrap" Text="Cha:" VerticalAlignment="Top" Width="23" Height="16"/>
-        <Button x:Name="ChaIncrease" Content="+" HorizontalAlignment="Left" Margin="223,113,0,0" VerticalAlignment="Top" Width="13" Height="18" Click="ChaIncrease_Click"/>
-        <Button x:Name="ChaDecrease" Content="-" HorizontalAlignment="Left" Margin="236,113,0,0" VerticalAlignment="Top" Width="13" Height="18" Click="ChaDecrease_Click"/>
-        <TextBox x:Name="WisStat" HorizontalAlignment="Left" Height="19" Margin="198,94,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="2.51,-6.489"/>
-        <TextBox x:Name="ChaStat" HorizontalAlignment="Left" Height="19" Margin="198,115,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.966,0.533"/>
+        <ComboBox x:Name="Class" HorizontalAlignment="Left" Margin="42,81,0,0" VerticalAlignment="Top" Width="76" SelectionChanged="ComboBox_SelectionChanged_1" Height="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="11,50,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top" Height="16" Width="25"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,77,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top" Height="16" Width="27"/>
+        <TextBlock x:Name="STR" HorizontalAlignment="Left" Margin="36,6,0,0" TextWrapping="Wrap" Text="STR:" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="23"/>
+        <Button x:Name="StrIncrease1" Content="+" HorizontalAlignment="Left" Margin="83,7,0,0" VerticalAlignment="Top" Width="13" Height="16" IsEnabled="True" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" FontSize="8"/>
+        <Button x:Name="StrDecrease" Content="-" HorizontalAlignment="Left" Margin="96,7,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <TextBlock x:Name="Int" HorizontalAlignment="Left" Margin="36,67,0,0" TextWrapping="Wrap" Text="INT:" VerticalAlignment="Top" RenderTransformOrigin="0.467,0.11" Grid.Column="1" Height="16" Width="21"/>
+        <Button x:Name="IntIncrease" Content="+" HorizontalAlignment="Left" Margin="83,67,0,0" VerticalAlignment="Top" Width="13" Height="16" IsEnabled="True" RenderTransformOrigin="1.185,-1.275" Grid.Column="1"/>
+        <Button x:Name="IntDecrease" Content="-" HorizontalAlignment="Left" Margin="96,67,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="209,7,0,0" TextWrapping="Wrap" Text="Points Left" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="56"/>
+        <TextBlock x:Name="PointsLeft" HorizontalAlignment="Left" Margin="268,7,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Grid.Column="1" Height="16" Width="13"/>
+        <TextBox x:Name="StrStat" HorizontalAlignment="Left" Height="18" Margin="58,6,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.977,-1.79" Grid.Column="1" IsEnabled="False" />
+        <TextBox x:Name="Intstat" HorizontalAlignment="Left" Height="19" Margin="58,66,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.977,-1.79" Grid.Column="1" IsEnabled="False"/>
+        <TextBlock x:Name="Con" HorizontalAlignment="Left" Margin="34,26,0,0" TextWrapping="Wrap" Text="Con:" VerticalAlignment="Top" RenderTransformOrigin="0.556,2.448" Grid.Column="1" Height="16" Width="24"/>
+        <Button x:Name="ConIncrease" Content="+" HorizontalAlignment="Left" Margin="83,28,0,0" VerticalAlignment="Top" Width="13" Height="16" IsEnabled="True" RenderTransformOrigin="1.185,-1.275" Grid.Column="1"/>
+        <Button x:Name="ConDecrease" Content="-" HorizontalAlignment="Left" Margin="96,28,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <TextBox x:Name="Constat" HorizontalAlignment="Left" Height="18" Margin="58,26,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" Grid.Column="1" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,46,0,0" TextWrapping="Wrap" Text="Dex:" VerticalAlignment="Top" Width="25" Height="17" RenderTransformOrigin="-0.475,0.632" Grid.Column="1"/>
+        <Button x:Name="DexIncrease" Content="+" HorizontalAlignment="Left" Margin="83,48,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <Button x:Name="DexDecrease" Content="-" HorizontalAlignment="Left" Margin="96,48,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <TextBox x:Name="Dexstat" HorizontalAlignment="Left" Height="18" Margin="58,46,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.879,0.535" Grid.Column="1" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="36,90,0,0" TextWrapping="Wrap" Text="Wis:" VerticalAlignment="Top" Width="23" Height="16" Grid.Column="1"/>
+        <Button x:Name="WisIncrease" Content="+" HorizontalAlignment="Left" Margin="83,88,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <Button x:Name="WisDecrease" Content="-" HorizontalAlignment="Left" Margin="96,88,0,0" VerticalAlignment="Top" Width="13" Height="16" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,110,0,0" TextWrapping="Wrap" Text="Cha:" VerticalAlignment="Top" Width="23" Height="16" Grid.Column="1"/>
+        <Button x:Name="ChaIncrease" Content="+" HorizontalAlignment="Left" Margin="83,110,0,0" VerticalAlignment="Top" Width="13" Height="17" Click="ChaIncrease_Click" Grid.Column="1"/>
+        <Button x:Name="ChaDecrease" Content="-" HorizontalAlignment="Left" Margin="96,110,0,0" VerticalAlignment="Top" Width="13" Height="17" Click="ChaDecrease_Click" Grid.Column="1"/>
+        <TextBox x:Name="WisStat" HorizontalAlignment="Left" Height="19" Margin="58,87,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="2.51,-6.489" Grid.Column="1" IsEnabled="False"/>
+        <TextBox x:Name="ChaStat" HorizontalAlignment="Left" Height="17" Margin="58,110,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="0.966,0.533" Grid.Column="1" IsEnabled="False"/>
+        <TextBlock HorizontalAlignment="Left" Margin="43,0,0,0" TextWrapping="Wrap" Text="Player Name:" VerticalAlignment="Top" Height="16" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,26,0,0" TextWrapping="Wrap" Text="Character Name:" VerticalAlignment="Top" Height="16" Width="90"/>
+        <TextBlock HorizontalAlignment="Left" Margin="118,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="16" Width="0"/>
+        <TextBox x:Name="PlayerName" HorizontalAlignment="Left" Height="23" Margin="117,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsManipulationEnabled="True" />
+        <TextBox x:Name="CharacterName" HorizontalAlignment="Left" Height="23" Margin="117,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsManipulationEnabled="True"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119,6,0,0" TextWrapping="Wrap" Text="Str Mod:" VerticalAlignment="Top" Width="49" Height="16"/>
+        <TextBox x:Name="StrMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False" RenderTransformOrigin="0.467,0.537"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="114,26,0,0" TextWrapping="Wrap" Text="Con Mod:" VerticalAlignment="Top" Width="54" Height="16"/>
+        <TextBox x:Name="ConMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
     </Grid>
 </Window>
