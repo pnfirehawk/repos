@@ -1,5 +1,4 @@
 ﻿Class MainWindow
-    Dim Strength = 10
     Dim Intelligence = 10
     Dim CStrength = 10
     Dim MaxStats = 32
@@ -28,106 +27,102 @@
 
 
     End Sub
+    Public Sub StrStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles StrStat.TextChanged
+        Dim stat = Convert.ToInt32(sender.Text)
 
+        If stat >= 17 Then
+            StrIncrease1.IsEnabled = False
+        End If
+        If stat <= 9 Then
+            StrDecrease.IsEnabled = False
+        End If
+        If stat < 18 Then
+            StrIncrease1.IsEnabled = True
+        End If
+        If stat >= 9 Then
+            StrDecrease.IsEnabled = True
+        End If
 
-    Public Sub StrIncrease1_Click(sender As Object, e As RoutedEventArgs) Handles StrIncrease1.Click
-        Select Case CStrength
-            Case 10 To 12
-                CStrength = CStrength + 1
-                StrStat.Text = CStrength.ToString
+    End Sub
+    Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles Intstat.TextChanged
+        Dim stat2 = Convert.ToInt32(sender.Text)
+        If stat2 <= 9 Then
+            IntDecrease.IsEnabled = False
+        End If
+        If stat2 >= 17 Then
+            IntIncrease.IsEnabled = False
+        End If
+        If stat2 < 18 Then
+            IntIncrease.IsEnabled = True
+        End If
+        If stat2 >= 9 Then
+            IntDecrease.IsEnabled = True
+        End If
+    End Sub
+
+    Function StatIncrease(ByRef i As Integer, ByVal a As TextBox)
+        Select Case i
+            Case 1 To 12
+                i = i + 1
+                a.Text = i.ToString
                 MaxStats = MaxStats - 1
                 PointsLeft.Text = MaxStats.ToString
             Case 13 To 15
-                CStrength = CStrength + 1
-                StrStat.Text = CStrength.ToString
+                i = i + 1
+                a.Text = i.ToString
                 MaxStats = MaxStats - 2
                 PointsLeft.Text = MaxStats.ToString
             Case 16
-                CStrength = CStrength + 1
-                StrStat.Text = CStrength.ToString
+                i = i + 1
+                a.Text = i.ToString
                 MaxStats = MaxStats - 3
                 PointsLeft.Text = MaxStats.ToString
             Case 17 To 18
-                CStrength = CStrength + 1
-                StrStat.Text = CStrength.ToString
+                i = i + 1
+                a.Text = i.ToString
                 MaxStats = MaxStats - 4
                 PointsLeft.Text = MaxStats.ToString
         End Select
+
+    End Function
+    Function StatDecrease(ByRef i As Integer, ByVal a As TextBox)
+        Select Case i
+            Case 1 To 13
+                i = i - 1
+                a.Text = i.ToString
+                MaxStats = MaxStats + 1
+                PointsLeft.Text = MaxStats.ToString
+            Case 14 To 16
+                i = i - 1
+                a.Text = i.ToString
+                MaxStats = MaxStats + 2
+                PointsLeft.Text = MaxStats.ToString
+            Case 17
+                i = i - 1
+                a.Text = i.ToString
+                MaxStats = MaxStats + 3
+                PointsLeft.Text = MaxStats.ToString
+            Case 18
+                i = i - 1
+                a.Text = i.ToString
+                MaxStats = MaxStats + 4
+                PointsLeft.Text = MaxStats.ToString
+        End Select
+    End Function
+
+    Public Sub StrIncrease1_Click(sender As Object, e As RoutedEventArgs) Handles StrIncrease1.Click
+        StatIncrease(CStrength, StrStat)
     End Sub
 
     Public Sub StrDecrease_Click(sender As Object, e As RoutedEventArgs) Handles StrDecrease.Click
-        Select Case CStrength
-            Case 10 To 13
-                CStrength = CStrength - 1
-                StrStat.Text = CStrength.ToString
-                MaxStats = MaxStats + 1
-                PointsLeft.Text = MaxStats.ToString
-            Case 14 To 16
-                CStrength = CStrength - 1
-                StrStat.Text = CStrength.ToString
-                MaxStats = MaxStats + 2
-                PointsLeft.Text = MaxStats.ToString
-            Case 17
-                CStrength = CStrength - 1
-                StrStat.Text = CStrength.ToString
-                MaxStats = MaxStats + 3
-                PointsLeft.Text = MaxStats.ToString
-            Case 18
-                CStrength = CStrength - 1
-                StrStat.Text = CStrength.ToString
-                MaxStats = MaxStats + 4
-                PointsLeft.Text = MaxStats.ToString
-        End Select
+        StatDecrease(CStrength, StrStat)
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles IntIncrease.Click
-        Select Case Intelligence
-            Case 10 To 12
-                Intelligence = Intelligence + 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats - 1
-                PointsLeft.Text = MaxStats.ToString
-            Case 13 To 15
-                Intelligence = Intelligence + 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats - 2
-                PointsLeft.Text = MaxStats.ToString
-            Case 16
-                Intelligence = Intelligence + 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats - 3
-                PointsLeft.Text = MaxStats.ToString
-            Case 17 To 18
-                Intelligence = Intelligence + 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats - 4
-                PointsLeft.Text = MaxStats.ToString
-
-        End Select
+        StatIncrease(Intelligence, Intstat)
 
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles IntDecrease.Click
-        Select Case Intelligence
-            Case 10 To 13
-                Intelligence = Intelligence - 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats + 1
-                PointsLeft.Text = MaxStats.ToString
-            Case 14 To 16
-                Intelligence = Intelligence - 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats + 2
-                PointsLeft.Text = MaxStats.ToString
-            Case 17
-                Intelligence = Intelligence - 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats + 3
-                PointsLeft.Text = MaxStats.ToString
-            Case 18
-                Intelligence = Intelligence - 1
-                IntStat.Text = Intelligence.ToString
-                MaxStats = MaxStats + 4
-                PointsLeft.Text = MaxStats.ToString
-        End Select
+        StatDecrease(Intelligence, Intstat)
     End Sub
 End Class

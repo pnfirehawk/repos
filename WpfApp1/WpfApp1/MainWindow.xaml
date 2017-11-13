@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid x:Name="StrIncrease">
+    <Grid x:Name="MainGrid">
         <ComboBox x:Name="Race" HorizontalAlignment="Left" Margin="40,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem x:Name="Test_Race1" Content="Test Race1" HorizontalAlignment="Left" Width="118"/>
             <ComboBoxItem x:Name="Test_Race2" Content="Test Race2" HorizontalAlignment="Left" Width="118"/>
@@ -16,14 +16,14 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Race" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="9,37,0,0" TextWrapping="Wrap" Text="Class" VerticalAlignment="Top"/>
         <TextBlock x:Name="STR" HorizontalAlignment="Left" Margin="176,10,0,0" TextWrapping="Wrap" Text="STR:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="StrStat" HorizontalAlignment="Left" Margin="198,10,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
-        <Button x:Name="StrIncrease1" Content="+" HorizontalAlignment="Left" Margin="211,10,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True"/>
-        <Button x:Name="StrDecrease" Content="-" HorizontalAlignment="Left" Margin="224,10,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBlock x:Name="Int" HorizontalAlignment="Left" Margin="176,26,0,0" TextWrapping="Wrap" Text="INT:" VerticalAlignment="Top"/>
-        <TextBlock x:Name="IntStat" HorizontalAlignment="Left" Margin="198,26,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top"/>
-        <Button x:Name="IntIncrease" Content="+" HorizontalAlignment="Left" Margin="211,26,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True"/>
-        <Button x:Name="IntDecrease" Content="-" HorizontalAlignment="Left" Margin="224,26,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="242,10,0,0" TextWrapping="Wrap" Text="Points Left" VerticalAlignment="Top"/>
-        <TextBlock x:Name="PointsLeft" HorizontalAlignment="Left" Margin="302,10,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top"/>
+        <Button x:Name="StrIncrease1" Content="+" HorizontalAlignment="Left" Margin="223,9,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True"/>
+        <Button x:Name="StrDecrease" Content="-" HorizontalAlignment="Left" Margin="236,9,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
+        <TextBlock x:Name="Int" HorizontalAlignment="Left" Margin="176,31,0,0" TextWrapping="Wrap" Text="INT:" VerticalAlignment="Top"/>
+        <Button x:Name="IntIncrease" Content="+" HorizontalAlignment="Left" Margin="223,30,0,0" VerticalAlignment="Top" Width="13" Height="16" FontSize="6" IsEnabled="True" RenderTransformOrigin="1.185,-1.275"/>
+        <Button x:Name="IntDecrease" Content="-" HorizontalAlignment="Left" Margin="236,30,0,0" VerticalAlignment="Top" Width="13" Height="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="319,16,0,0" TextWrapping="Wrap" Text="Points Left" VerticalAlignment="Top"/>
+        <TextBlock x:Name="PointsLeft" HorizontalAlignment="Left" Margin="377,16,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top"/>
+        <TextBox x:Name="StrStat" HorizontalAlignment="Left" Height="19" Margin="198,9,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.977,-1.79"/>
+        <TextBox x:Name="Intstat" HorizontalAlignment="Left" Height="19" Margin="198,28,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="20" RenderTransformOrigin="1.977,-1.79"/>
     </Grid>
 </Window>
