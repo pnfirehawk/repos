@@ -56,7 +56,15 @@
         <TextBox x:Name="CharacterName" HorizontalAlignment="Left" Height="23" Margin="117,24,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsManipulationEnabled="True"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="119,6,0,0" TextWrapping="Wrap" Text="Str Mod:" VerticalAlignment="Top" Width="49" Height="16"/>
         <TextBox x:Name="StrMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False" RenderTransformOrigin="0.467,0.537"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="114,26,0,0" TextWrapping="Wrap" Text="Con Mod:" VerticalAlignment="Top" Width="54" Height="16"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="111,26,0,0" TextWrapping="Wrap" Text="Con Mod:" VerticalAlignment="Top" Width="54" Height="16"/>
         <TextBox x:Name="ConMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="114,46,0,0" TextWrapping="Wrap" Text="Dex Mod:" VerticalAlignment="Top"/>
+        <TextBox x:Name="DexMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="120,68,0,0" TextWrapping="Wrap" Text="Int Mod:" VerticalAlignment="Top"/>
+        <TextBox x:Name="IntMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,68,-2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="116,88,0,0" TextWrapping="Wrap" Text="Wis Mod:" VerticalAlignment="Top"/>
+        <TextBox x:Name="WisMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,90,-2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="114,109,0,0" TextWrapping="Wrap" Text="Cha Mod:" VerticalAlignment="Top"/>
+        <TextBox x:Name="ChaMod" Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="168,112,-2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="False"/>
     </Grid>
 </Window>

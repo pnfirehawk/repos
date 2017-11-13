@@ -85,25 +85,25 @@
             Case 1 To 12
                 i = i + 1
                 a.Text = i.ToString
-                b.Text = ((i - 10) / 2).ToString
+                b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats - 1
                 PointsLeft.Text = MaxStats.ToString
             Case 13 To 15
                 i = i + 1
                 a.Text = i.ToString
-                b.Text = ((i - 10) / 2).ToString
+                b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats - 2
                 PointsLeft.Text = MaxStats.ToString
             Case 16
                 i = i + 1
-                b.Text = ((i - 10) / 2).ToString
+                b.Text = ((i - 10) \ 2).ToString
                 a.Text = i.ToString
                 MaxStats = MaxStats - 3
                 PointsLeft.Text = MaxStats.ToString
             Case 17 To 18
                 i = i + 1
                 a.Text = i.ToString
-                b.Text = ((i - 10) / 2).ToString
+                b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats - 4
                 PointsLeft.Text = MaxStats.ToString
         End Select
@@ -148,11 +148,11 @@
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles IntIncrease.Click
-        StatIncrease(Intelligence, Intstat, StrMod)
+        StatIncrease(Intelligence, Intstat, IntMod)
 
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles IntDecrease.Click
-        StatDecrease(Intelligence, Intstat, StrMod)
+        StatDecrease(Intelligence, Intstat, IntMod)
     End Sub
 
     Private Sub ConIncrease_Click(sender As Object, e As RoutedEventArgs) Handles ConIncrease.Click
@@ -163,25 +163,25 @@
         StatDecrease(Constitution, Constat, ConMod)
     End Sub
     Private Sub DexIncrease_Click(sender As Object, e As RoutedEventArgs) Handles DexIncrease.Click
-        StatIncrease(Dex, Dexstat, StrMod)
+        StatIncrease(Dex, Dexstat, DexMod)
     End Sub
     Private Sub DexDecrease_Click(sender As Object, e As RoutedEventArgs) Handles DexDecrease.Click
-        StatDecrease(Dex, Dexstat, StrMod)
+        StatDecrease(Dex, Dexstat, DexMod)
     End Sub
 
     Private Sub WisIncrease_Click(sender As Object, e As RoutedEventArgs) Handles WisIncrease.Click
-        StatIncrease(Wis, WisStat, StrMod)
+        StatIncrease(Wis, WisStat, WisMod)
     End Sub
 
     Private Sub WisDecrease_Click(sender As Object, e As RoutedEventArgs) Handles WisDecrease.Click
-        StatDecrease(Wis, WisStat, StrMod)
+        StatDecrease(Wis, WisStat, WisMod)
     End Sub
 
     Private Sub ChaIncrease_Click(sender As Object, e As RoutedEventArgs)
-        StatIncrease(Cha, ChaStat, StrMod)
+        StatIncrease(Cha, ChaStat, ChaMod)
     End Sub
 
     Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs)
-        StatDecrease(Cha, ChaStat, StrMod)
+        StatDecrease(Cha, ChaStat, ChaMod)
     End Sub
 End Class
