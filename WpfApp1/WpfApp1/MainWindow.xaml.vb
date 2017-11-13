@@ -10,6 +10,7 @@
     Dim MaxStats = 32
 
 
+
     Private Sub ComboBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim x = Race.SelectedIndex
         Select Case x
@@ -53,7 +54,6 @@
     Public Sub StrStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles StrStat.TextChanged
         Dim stat = Convert.ToInt32(sender.Text)
         Buttonenabled(StrStat.Text, StrIncrease1, StrDecrease)
-
     End Sub
 
     Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles Intstat.TextChanged
@@ -183,5 +183,9 @@
 
     Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs)
         StatDecrease(Cha, ChaStat, ChaMod)
+    End Sub
+
+    Private Sub MainWindow_SizeChanged(sender As Object, e As SizeChangedEventArgs) Handles Me.SizeChanged
+
     End Sub
 End Class
