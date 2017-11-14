@@ -5,80 +5,140 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="369.666" Width="593.733">
-    <Grid x:Name="MainGrid" Cursor="" Margin="0,0,-6.2,0.6">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="88*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="PName" HorizontalAlignment="Left" Content="Player Name:" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="Auto" Width="Auto" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" />
-        <Label HorizontalAlignment="Left" Content="Character Name:" VerticalAlignment="Top" Height="Auto" Width="Auto" Margin="-5,2,0,0" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Label HorizontalAlignment="Left" Margin="-5,22.4,0,0" Content="Character Race:" VerticalAlignment="Top" Height="Auto" Width="Auto" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"/>
-        <Label HorizontalAlignment="Left" Margin="0,1.6,0,0" Content="Character Class:" VerticalAlignment="Top" Height="Auto" Width="Auto" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
-        <Label x:Name="STR" HorizontalAlignment="Left" Margin="0,3.6,0,0" Content="STR:" VerticalAlignment="Top" Height="Auto" Width="Auto" Grid.Row="5" Grid.Column="0"/>
-        <Label x:Name="Con" HorizontalAlignment="Left" Margin="0,3.6,0,0" Content="Con:" VerticalAlignment="Top"  Height="Auto" Width="Auto" Grid.Row="6" Grid.Column="0"/>
-        <Label x:Name="Dex" HorizontalAlignment="Left" Margin="0,3.6,0,0" Content="Dex:" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="7" Grid.Column="0"/>
-        <Label x:Name="Int" HorizontalAlignment="Left" Margin="0,3.6,0,0" Content="Int:" VerticalAlignment="Top" Height="Auto" Width="Auto" Grid.Row="8" Grid.Column="0"/>
-        <Label x:Name="Wis" HorizontalAlignment="Left" Margin="0,3.6,0,0" Content="Wis:" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="9" Grid.Column="0"/>
-        <Label x:Name="Cha" HorizontalAlignment="Left" Margin="1,27.6,0,0" Content="Cha:" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="9" Grid.Column="0" Grid.RowSpan="3"/>
-        <TextBox x:Name="StrStat" HorizontalAlignment="Left" Height="Auto" Margin="30,5,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="1.977,-1.79" IsEnabled="True" IsReadOnly="True" Grid.Row="5" />
-        <TextBox x:Name="Constat" HorizontalAlignment="Left" Height="Auto" Margin="30,4.2,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="Auto" IsEnabled="True" IsReadOnly="True" Grid.Row="6"/>
-        <TextBox x:Name="Dexstat" HorizontalAlignment="Left" Height="Auto" Margin="30,0.6,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="0.879,0.535" IsEnabled="True" IsReadOnly="True" Grid.Row="7"/>
-        <TextBox x:Name="Intstat" HorizontalAlignment="Left" Height="Auto" Margin="30,0.6,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="1.977,-1.79" IsEnabled="True" IsReadOnly="True" Grid.Row="8"/>
-        <TextBox x:Name="WisStat" HorizontalAlignment="Left" Height="Auto" Margin="30,0,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="2.51,-6.489" IsEnabled="True" IsReadOnly="True" Grid.Row="9"/>
-        <TextBox x:Name="ChaStat" HorizontalAlignment="Left" Height="Auto" Margin="30,1.8,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="Auto" RenderTransformOrigin="0.966,0.533" IsEnabled="True" IsReadOnly="True" Grid.Row="10"/>
-        <Button x:Name="StrIncrease" Content="+" HorizontalAlignment="Left" Margin="55,6,0,0" Grid.Row="5" VerticalAlignment="Top" Width="13" Height="20"/>
-        <Button x:Name="StrDecrease" Content="-" HorizontalAlignment="Left" Margin="68,6,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="5" Grid.Column="0"/>
-        <Button x:Name="ConIncrease" Content="+" HorizontalAlignment="Left" Margin="55,4.6,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="6" Grid.Column="0"/>
-        <Button x:Name="ConDecrease" Content="-" HorizontalAlignment="Left" Margin="68,4.6,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="6" Grid.Column="0"/>
-        <Button x:Name="DexIncrease" Content="+" HorizontalAlignment="Left" Margin="55,2.8,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="7" Grid.Column="0"/>
-        <Button x:Name="DexDecrease" Content="-" HorizontalAlignment="Left" Margin="68,2.8,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="7" Grid.Column="0"/>
-        <Button x:Name="IntIncrease" Content="+" HorizontalAlignment="Left" Margin="55,1.4,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="8" Grid.Column="0"/>
-        <Button x:Name="IntDecrease" Content="-" HorizontalAlignment="Left" Margin="68,1.4,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="8" Grid.Column="0"/>
-        <Button x:Name="WisIncrease" Content="+" HorizontalAlignment="Left" Margin="55,1.2,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="9" Grid.Column="0"/>
-        <Button x:Name="WisDecrease" Content="-" HorizontalAlignment="Left" Margin="68,1.2,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="9" Grid.Column="0"/>
-        <Button x:Name="ChaIncrease" Content="+" HorizontalAlignment="Left" Margin="55,1.4,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="10" Grid.Column="0"/>
-        <Button x:Name="ChaDecrease" Content="-" HorizontalAlignment="Left" Margin="69,1,0,0" VerticalAlignment="Top" Width="Auto" Height="Auto" Grid.Row="10" Grid.Column="0"/>
+        Title="MainWindow" 
+        Height="300" Width="500" 
+        TextOptions.TextFormattingMode="Display" 
+        SizeToContent="WidthAndHeight" 
+        ScrollViewer.VerticalScrollBarVisibility="Auto" 
+        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        ResizeMode="CanResizeWithGrip">
+    <DockPanel>
+        <Menu x:Name="menu" DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <MenuItem Header="E_xit" />
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom" Height="Auto" VerticalAlignment="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="prLabel" Text="Points Remaining: " HorizontalAlignment="Left" FontSize="10" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock x:Name="pointsRemaining" HorizontalAlignment="Left" FontSize="10" />
+            </StatusBarItem>
+            <TextBox x:Name="PointsLeft" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="28"/>
+        </StatusBar>
+        <GroupBox x:Name="groupBox0" Header="Character" Height="Auto" Width="Auto" DockPanel.Dock="Left" Margin="5,0.2,5,5.2" FontWeight="Medium" TextOptions.TextHintingMode="Animated">
+            <Grid x:Name="charGrid" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="25" Height="*"/>
+                    <RowDefinition MinHeight="25" Height="*"/>
+                    <RowDefinition MinHeight="25" Height="*"/>
+                    <RowDefinition MinHeight="25" Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="50" Width="*"/>
+                    <ColumnDefinition MinWidth="50" Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="label0" Content="Player" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0"/>
+                <TextBox x:Name="pName" Height="Auto" Text="" Width="Auto" Grid.Column="1" Grid.Row="0" FontStretch="Normal"/>
+                <Label x:Name="label1" Content="Character" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="1"/>
+                <TextBox x:Name="cName" Height="Auto" Text="" Width="150" Grid.Row="1" Grid.Column="1"/>
+                <Label x:Name="CRace" Content="Race" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom"/>
+                <ComboBox x:Name="Race" Grid.Column="1" Margin="0,1,0,0" Grid.Row="2"/>
+                <Label x:Name="CClass" Content="Class" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" VerticalAlignment="Bottom"/>
+                <ComboBox x:Name="Class" Grid.Column="1" Margin="0" Grid.Row="3"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Stats" Height="Auto" Width="Auto" Margin="5,0.2,5,5.2" DockPanel.Dock="Left" FontWeight="Medium">
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="50"/>
+                    <ColumnDefinition MinWidth="25"/>
+                    <ColumnDefinition MinWidth="20"/>
+                    <ColumnDefinition MinWidth="60"/>
+                    <ColumnDefinition MinWidth="25"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25"/>
+                    <RowDefinition MinHeight="25" />
+                </Grid.RowDefinitions>
+                <!-- Grouped by stat from here -->
+                <!-- STR stat -->
+                <Label x:Name="strLbl" Content="STR" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="strBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="0" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" RenderTransformOrigin="0.5,0.5" FontSize="14">
+                    <TextBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBox.RenderTransform>
+                </TextBox>
+                <StackPanel Grid.Row="0" Grid.Column="2" Height="Auto" Width="Auto" Margin="0,0,0,5">
+                    <Button x:Name="strUp" Content="+" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                    <Button x:Name="strDn" Content="-" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                </StackPanel>
+                <Label x:Name="strModLbl" Content="STR Mod" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="strModBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="0" Grid.Column="4" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
 
+                <!-- INT stat -->
+                <Label x:Name="intLbl" Content="INT" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="intBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="2" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+                <StackPanel Grid.Row="2" Grid.Column="2" Height="Auto" Width="Auto" Margin="0,0,0,5">
+                    <Button x:Name="intUp" Content="+" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                    <Button x:Name="intDn" Content="-" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                </StackPanel>
+                <Label x:Name="intModLbl" Content="INT Mod" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="intModBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="2" Grid.Column="4" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
 
-        <ComboBox  x:Name="Race" HorizontalAlignment="Left" Margin="3.2,1.8,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="ComboBox_SelectionChanged" Height="25" Grid.Column="1" Grid.Row="2">
-            <ComboBoxItem x:Name="Test_Race1" Content="Test Race1" HorizontalAlignment="Left" Width="118" Cursor="" AutomationProperties.IsRowHeader="True" />
-            <ComboBoxItem x:Name="Test_Race2" Content="Test Race2" HorizontalAlignment="Left" Width="118"/>
-            <ComboBoxItem x:Name="Test_Race3" Content="Test Race3" HorizontalAlignment="Left" Width="118"/>
-        </ComboBox>
-        <ComboBox x:Name="Class" HorizontalAlignment="Left" Margin="3.2,1.6,0,0" VerticalAlignment="Top" Width="104" SelectionChanged="ComboBox_SelectionChanged_1" Height="26" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="4.2,6.4,0,0" TextWrapping="Wrap" Text="Points Left" VerticalAlignment="Top" Height="16" Width="56" Grid.Column="1" Grid.Row="4"/>
-        <TextBlock x:Name="PointsLeft" HorizontalAlignment="Left" Margin="65.2,6.4,0,0" TextWrapping="Wrap" Text="32" VerticalAlignment="Top" Height="16" Width="19" Grid.Column="1" Grid.Row="4"/>
-        <TextBlock HorizontalAlignment="Left" Margin="8,1,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" Height="16" Width="0" Grid.Column="2"/>
-        <TextBox x:Name="PlayerName" HorizontalAlignment="Left" Height="23" Margin="3.2,1,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsManipulationEnabled="True" Grid.Column="1" />
-        <TextBox x:Name="CharacterName" HorizontalAlignment="Left" Height="23" Margin="3.2,0.4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsManipulationEnabled="True" Grid.Column="1" Grid.Row="1"/>
-        <TextBlock HorizontalAlignment="Left" Margin="9.2,3,0,0" TextWrapping="Wrap" Text="Str Mod:" VerticalAlignment="Top" Width="49" Height="16" Grid.Column="1" Grid.Row="5"/>
-        <TextBox x:Name="StrMod" HorizontalAlignment="Left" Height="18" Margin="58.2,3,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="True" IsReadOnly="True" RenderTransformOrigin="0.467,0.537" Grid.Column="1" Grid.Row="5"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1.2,2.6,0,0" TextWrapping="Wrap" Text="Con Mod:" VerticalAlignment="Top" Width="54" Height="16" Grid.Row="6" Grid.Column="1"/>
-        <TextBox x:Name="ConMod" HorizontalAlignment="Left" Height="18" Margin="58.2,2.6,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="True" IsReadOnly="True" Grid.Column="1" Grid.Row="6"/>
-        <TextBlock HorizontalAlignment="Left" Margin="4.2,0.8,0,0" TextWrapping="Wrap" Text="Dex Mod:" VerticalAlignment="Top" Height="16" Width="51" Grid.Row="7" Grid.Column="1"/>
-        <TextBox x:Name="DexMod" HorizontalAlignment="Left" Height="18" Margin="58.2,0.8,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="True" IsReadOnly="True" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="8.6,1,0,0" TextWrapping="Wrap" Text="Int Mod:" VerticalAlignment="Top" Height="16" Width="52" Grid.Row="8" Grid.Column="1"/>
-        <TextBox x:Name="IntMod" HorizontalAlignment="Left" Height="18" Margin="58.2,0.4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="True" IsReadOnly="True" Grid.Column="1" Grid.Row="8"/>
-        <TextBlock HorizontalAlignment="Left" Margin="3.2,0.2,0,0" TextWrapping="Wrap" Text="Wis Mod:" VerticalAlignment="Top" Height="16" Width="55" Grid.Row="9" Grid.Column="1"/>
-        <TextBox x:Name="WisMod" HorizontalAlignment="Left" Height="18" Margin="58.2,1.2,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="True" IsReadOnly="True" Grid.Column="1" Grid.Row="9"/>
-        <TextBlock HorizontalAlignment="Left" Margin="4.6,0.4,0,0" TextWrapping="Wrap" Text="Cha Mod:" VerticalAlignment="Top" Height="16" Width="54" Grid.Row="10" Grid.Column="1"/>
-        <TextBox x:Name="ChaMod" HorizontalAlignment="Left" Height="18" Margin="58.2,2,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="20" IsEnabled="True" IsReadOnly="True" Grid.Column="1" Grid.Row="10"/>
+                <!-- DEX stat -->
+                <Label x:Name="dexLbl" Content="DEX" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="dexBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="1" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+                <StackPanel Grid.Row="1" Grid.Column="2" Height="Auto" Width="Auto" Margin="0,0,0,5">
+                    <Button x:Name="dexUp" Content="+" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                    <Button x:Name="dexDn" Content="-" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                </StackPanel>
+                <Label x:Name="dexModLbl" Content="DEX Mod" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0.333,5" Grid.ColumnSpan="2" />
+                <TextBox x:Name="dexModBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="1" Grid.Column="4" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
 
-    </Grid>
+                <!-- CON stat -->
+                <Label x:Name="conLbl" Content="CON" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="conBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+                <StackPanel Grid.Row="3" Grid.Column="2" Height="Auto" Width="Auto" Margin="0,0,0,5">
+                    <Button x:Name="conUp" Content="+" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                    <Button x:Name="conDn" Content="-" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                </StackPanel>
+                <Label x:Name="conModLbl" Content="CON Mod" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0.333,5" Grid.ColumnSpan="2" />
+                <TextBox x:Name="conModBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="4" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+
+                <!-- WIS stat -->
+                <Label x:Name="wisLbl" Content="WIS" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="wisBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="4" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+                <StackPanel Grid.Row="4" Grid.Column="2" Height="Auto" Width="Auto" Margin="0,0,0,5">
+                    <Button x:Name="wisUp" Content="+" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                    <Button x:Name="wisDn" Content="-" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                </StackPanel>
+                <Label x:Name="wisModLbl" Content="WIS Mod" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="wisModBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="4" Grid.Column="4" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+
+                <!-- CHR stat -->
+                <Label x:Name="chaLbl" Content="CHA" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="chaBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="5" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+                <StackPanel Grid.Row="5" Grid.Column="2" Height="Auto" Width="Auto" Margin="0,0,0,5">
+                    <Button x:Name="chaUp" Content="+" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                    <Button x:Name="chaDn" Content="-" HorizontalAlignment="Left" MinHeight="10" MinWidth="16" Height="Auto" Width="Auto" FontSize="8" FontWeight="Bold" />
+                </StackPanel>
+                <Label x:Name="chaModLbl" Content="CHA Mod" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" />
+                <TextBox x:Name="chaModBox" AcceptsReturn="False" IsReadOnly="True" Grid.Row="5" Grid.Column="4" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="0,0,0,5" FontSize="14"/>
+            </Grid>
+        </GroupBox>
+    </DockPanel>
 </Window>
