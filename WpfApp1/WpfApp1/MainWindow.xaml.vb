@@ -6,10 +6,7 @@
     Dim Dexterity = 10
     Dim Wisdom = 10
     Dim Charisma = 10
-
     Dim MaxStats = 32
-
-
 
     Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim x = Race.SelectedIndex
@@ -83,7 +80,7 @@
         Buttonenabled(chaBox.Text, chaUp, chaDn)
     End Sub
 
-    Function StatIncrease(ByRef i As Integer, ByVal x As TextBox, b As TextBox)
+    Sub StatIncrease(ByRef i As Integer, ByVal x As TextBox, b As TextBox)
         Select Case i
             Case 1 To 12
                 If (MaxStats - 1 >= 0) Then
@@ -119,8 +116,8 @@
                 End If
         End Select
 
-    End Function
-    Function StatDecrease(ByRef i As Integer, ByVal a As TextBox, ByVal b As TextBox)
+    End Sub
+    Sub StatDecrease(ByRef i As Integer, ByVal a As TextBox, ByVal b As TextBox)
         Select Case i
             Case 1 To 13
                 i = i - 1
@@ -147,10 +144,7 @@
                 MaxStats = MaxStats + 4
                 pointsRemaining.Text = MaxStats.ToString
         End Select
-
-
-
-    End Function
+    End Sub
 
     Public Sub StrIncrease_Click(sender As Object, e As RoutedEventArgs) Handles strUp.Click
         StatIncrease(CStrength, strBox, strModBox)
@@ -197,8 +191,5 @@
     Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs) Handles chaDn.Click
         StatDecrease(Charisma, chaBox, chaModBox)
     End Sub
-
-
-
 End Class
 
