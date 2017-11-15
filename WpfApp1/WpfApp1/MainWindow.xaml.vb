@@ -7,7 +7,6 @@
     Dim Wisdom = 10
     Dim Charisma = 10
 
-
     Dim MaxStats = 32
 
 
@@ -92,7 +91,7 @@
                     x.Text = i.ToString
                     b.Text = ((i - 10) \ 2).ToString
                     MaxStats = MaxStats - 1
-                    PointsLeft.Text = MaxStats.ToString
+                    pointsRemaining.Text = MaxStats.ToString
                 End If
             Case 13 To 15
                 If (MaxStats - 2 >= 0) Then
@@ -100,7 +99,7 @@
                     x.Text = i.ToString
                     b.Text = ((i - 10) \ 2).ToString
                     MaxStats = MaxStats - 2
-                    PointsLeft.Text = MaxStats.ToString
+                    pointsRemaining.Text = MaxStats.ToString
                 End If
             Case 16
                 If (MaxStats - 3 >= 0) Then
@@ -108,7 +107,7 @@
                     b.Text = ((i - 10) \ 2).ToString
                     x.Text = i.ToString
                     MaxStats = MaxStats - 3
-                    PointsLeft.Text = MaxStats.ToString
+                    pointsRemaining.Text = MaxStats.ToString
                 End If
             Case 17 To 18
                 If (MaxStats - 4 >= 0) Then
@@ -116,7 +115,7 @@
                     x.Text = i.ToString
                     b.Text = ((i - 10) \ 2).ToString
                     MaxStats = MaxStats - 4
-                    PointsLeft.Text = MaxStats.ToString
+                    pointsRemaining.Text = MaxStats.ToString
                 End If
         End Select
 
@@ -128,25 +127,25 @@
                 a.Text = i.ToString
                 b.Text = ((i - 10) \ 2)
                 MaxStats = MaxStats + 1
-                PointsLeft.Text = MaxStats.ToString
+                pointsRemaining.Text = MaxStats.ToString
             Case 14 To 16
                 i = i - 1
                 a.Text = i.ToString
                 b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats + 2
-                PointsLeft.Text = MaxStats.ToString
+                pointsRemaining.Text = MaxStats.ToString
             Case 17
                 i = i - 1
                 a.Text = i.ToString
                 b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats + 3
-                PointsLeft.Text = MaxStats.ToString
+                pointsRemaining.Text = MaxStats.ToString
             Case 18
                 i = i - 1
                 a.Text = i.ToString
                 b.Text = ((i - 10) \ 2).ToString
                 MaxStats = MaxStats + 4
-                PointsLeft.Text = MaxStats.ToString
+                pointsRemaining.Text = MaxStats.ToString
         End Select
 
 
@@ -199,9 +198,7 @@
         StatDecrease(Charisma, chaBox, chaModBox)
     End Sub
 
-    Private Sub MainWindow_SizeChanged(sender As Object, e As SizeChangedEventArgs) Handles Me.SizeChanged
 
-    End Sub
 
 End Class
 
