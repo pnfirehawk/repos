@@ -1,12 +1,19 @@
 ﻿Class MainWindow
+    Dim StatsObj As CharacterStats
 
-    Dim Intelligence = 10
-    Dim CStrength = 10
-    Dim Constitution = 10
-    Dim Dexterity = 10
-    Dim Wisdom = 10
-    Dim Charisma = 10
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        StatsObj = New CharacterStats()
+        StatsTab.DataContext = StatsObj
+        StatusBar.DataContext = StatsObj
+    End Sub
+
     Dim MaxStats = 32
+
 
     Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
         Dim x = Race.SelectedIndex
@@ -32,7 +39,36 @@
 
 
     End Sub
-    Function Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
+    Public Sub strBox_TextChanged(sender As Object, e As RoutedEventArgs) Handles strBox.TextChanged
+
+        Buttonenabled(strBox.Text, strUp, strDn)
+    End Sub
+
+    Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles intBox.TextChanged
+
+        Buttonenabled(intBox.Text, intUp, intDn)
+    End Sub
+
+    Public Sub Constat_TextChanged(sender As Object, e As RoutedEventArgs) Handles conBox.TextChanged
+
+        Buttonenabled(conBox.Text, conUp, conDn)
+    End Sub
+
+    Public Sub Dexstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles dexBox.TextChanged
+
+        Buttonenabled(dexBox.Text, dexUp, dexDn)
+    End Sub
+
+    Public Sub WisStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles wisBox.TextChanged
+
+        Buttonenabled(wisBox.Text, wisUp, wisDn)
+    End Sub
+    Public Sub ChasStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles chaBox.TextChanged
+
+        Buttonenabled(chaBox.Text, chaUp, chaDn)
+    End Sub
+    Sub Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
+
         If stat >= 17 Then
             a.IsEnabled = False
         End If
@@ -45,151 +81,118 @@
         If stat >= 9 Then
             b.IsEnabled = True
         End If
+    End Sub
+    Function StatMod(ByVal e As Integer)
+        Dim result As Integer
+        result = (e - 10) \ 2
+        Return result
     End Function
-
-
-
-
-    Public Sub strBox_TextChanged(sender As Object, e As RoutedEventArgs) Handles strBox.TextChanged
-        Dim stat = Convert.ToInt32(sender.Text)
-        Buttonenabled(strBox.Text, strUp, strDn)
-
-    End Sub
-
-    Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles intBox.TextChanged
-        Dim stat = Convert.ToInt32(sender.Text)
-        Buttonenabled(intBox.Text, intUp, intDn)
-    End Sub
-
-    Public Sub Constat_TextChanged(sender As Object, e As RoutedEventArgs) Handles conBox.TextChanged
-        Dim stat = Convert.ToInt32(sender.Text)
-        Buttonenabled(conBox.Text, conUp, conDn)
-    End Sub
-
-    Public Sub Dexstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles dexBox.TextChanged
-        Dim stat = Convert.ToInt32(sender.text)
-        Buttonenabled(dexBox.Text, dexUp, dexDn)
-    End Sub
-
-    Public Sub WisStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles wisBox.TextChanged
-        Dim stat = Convert.ToInt32(sender.text)
-        Buttonenabled(wisBox.Text, wisUp, wisDn)
-    End Sub
-    Public Sub ChasStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles chaBox.TextChanged
-        Dim stat = Convert.ToInt32(sender.text)
-        Buttonenabled(chaBox.Text, chaUp, chaDn)
-    End Sub
-
-    Sub StatIncrease(ByRef i As Integer, ByVal x As TextBox, b As TextBox)
+    Function StatIncrease(ByVal i As Integer)
+        Dim result As Integer
+        result = 0
         Select Case i
             Case 1 To 12
-                If (MaxStats - 1 >= 0) Then
-                    i = i + 1
-                    x.Text = i.ToString
-                    b.Text = ((i - 10) \ 2).ToString
-                    MaxStats = MaxStats - 1
-                    pointsRemaining.Text = MaxStats.ToString
+                If (StatsObj.MAXSTATS - 1 >= 0) Then
+                    result = i + 1
+
+                    StatsObj.MAXSTATS = StatsObj.MAXSTATS - 1
+                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
             Case 13 To 15
-                If (MaxStats - 2 >= 0) Then
-                    i = i + 1
-                    x.Text = i.ToString
-                    b.Text = ((i - 10) \ 2).ToString
-                    MaxStats = MaxStats - 2
-                    pointsRemaining.Text = MaxStats.ToString
+                If (StatsObj.MAXSTATS - 2 >= 0) Then
+                    result = i + 1
+
+                    StatsObj.MAXSTATS = StatsObj.MAXSTATS - 2
+                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
             Case 16
-                If (MaxStats - 3 >= 0) Then
-                    i = i + 1
-                    b.Text = ((i - 10) \ 2).ToString
-                    x.Text = i.ToString
-                    MaxStats = MaxStats - 3
-                    pointsRemaining.Text = MaxStats.ToString
+                If (StatsObj.MAXSTATS - 3 >= 0) Then
+                    result = i + 1
+
+                    StatsObj.MAXSTATS = StatsObj.MAXSTATS - 3
+                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
             Case 17 To 18
-                If (MaxStats - 4 >= 0) Then
-                    i = i + 1
-                    x.Text = i.ToString
-                    b.Text = ((i - 10) \ 2).ToString
-                    MaxStats = MaxStats - 4
-                    pointsRemaining.Text = MaxStats.ToString
+                If (StatsObj.MAXSTATS - 4 >= 0) Then
+                    result = i + 1
+
+                    StatsObj.MAXSTATS = StatsObj.MAXSTATS - 4
+                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
         End Select
-
-    End Sub
-    Sub StatDecrease(ByRef i As Integer, ByVal a As TextBox, ByVal b As TextBox)
+        Return result
+    End Function
+    Function StatDecrease(ByVal i As Integer)
+        Dim result As Integer
+        result = 0
         Select Case i
             Case 1 To 13
-                i = i - 1
-                a.Text = i.ToString
-                b.Text = ((i - 10) \ 2)
+                result = i - 1
                 MaxStats = MaxStats + 1
                 pointsRemaining.Text = MaxStats.ToString
             Case 14 To 16
-                i = i - 1
-                a.Text = i.ToString
-                b.Text = ((i - 10) \ 2).ToString
+                result = i - 1
                 MaxStats = MaxStats + 2
                 pointsRemaining.Text = MaxStats.ToString
             Case 17
-                i = i - 1
-                a.Text = i.ToString
-                b.Text = ((i - 10) \ 2).ToString
+                result = i - 1
                 MaxStats = MaxStats + 3
                 pointsRemaining.Text = MaxStats.ToString
             Case 18
                 i = i - 1
-                a.Text = i.ToString
-                b.Text = ((i - 10) \ 2).ToString
+
                 MaxStats = MaxStats + 4
                 pointsRemaining.Text = MaxStats.ToString
         End Select
-    End Sub
+        Return result
+    End Function
 
     Public Sub StrIncrease_Click(sender As Object, e As RoutedEventArgs) Handles strUp.Click
-        StatIncrease(CStrength, strBox, strModBox)
+        StatsObj.STR = StatIncrease(StatsObj.STR)
     End Sub
 
     Public Sub StrDecrease_Click(sender As Object, e As RoutedEventArgs) Handles strDn.Click
-        StatDecrease(CStrength, strBox, strModBox)
+        StatsObj.STR = StatDecrease(StatsObj.STR)
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles intUp.Click
-        StatIncrease(Intelligence, intBox, intModBox)
+        StatsObj.INT = StatIncrease(StatsObj.INT)
 
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles intDn.Click
-        StatDecrease(Intelligence, intBox, intModBox)
+        StatsObj.INT = StatDecrease(StatsObj.INT)
     End Sub
 
     Private Sub ConIncrease_Click(sender As Object, e As RoutedEventArgs) Handles conUp.Click
-        StatIncrease(Constitution, conBox, conModBox)
+        StatsObj.CON = StatIncrease(StatsObj.CON)
     End Sub
 
     Private Sub ConDecrease_Click(sender As Object, e As RoutedEventArgs) Handles conDn.Click
-        StatDecrease(Constitution, conBox, conModBox)
+        StatsObj.CON = StatDecrease(StatsObj.CON)
     End Sub
     Private Sub DexIncrease_Click(sender As Object, e As RoutedEventArgs) Handles dexUp.Click
-        StatIncrease(Dexterity, dexBox, dexModBox)
+        StatsObj = StatIncrease(StatsObj.DEX)
     End Sub
     Private Sub DexDecrease_Click(sender As Object, e As RoutedEventArgs) Handles dexDn.Click
-        StatDecrease(Dexterity, dexBox, dexModBox)
+        StatsObj = StatDecrease(StatsObj.DEX)
     End Sub
 
     Private Sub WisIncrease_Click(sender As Object, e As RoutedEventArgs) Handles wisUp.Click
-        StatIncrease(Wisdom, wisBox, wisModBox)
+        StatsObj = StatIncrease(StatsObj.WIS)
     End Sub
 
     Private Sub WisDecrease_Click(sender As Object, e As RoutedEventArgs) Handles wisDn.Click
-        StatDecrease(Wisdom, wisBox, wisModBox)
+        StatsObj = StatDecrease(StatsObj.WIS)
     End Sub
 
     Private Sub ChaIncrease_Click(sender As Object, e As RoutedEventArgs) Handles chaUp.Click
-        StatIncrease(Charisma, chaBox, chaModBox)
+        StatsObj = StatIncrease(StatsObj.CHA)
     End Sub
 
     Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs) Handles chaDn.Click
-        StatDecrease(Charisma, chaBox, chaModBox)
+        StatsObj = StatDecrease(StatsObj.CHA)
     End Sub
+
+
 End Class
 
