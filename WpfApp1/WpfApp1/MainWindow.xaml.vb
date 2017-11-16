@@ -12,7 +12,7 @@
         StatusBar.DataContext = StatsObj
     End Sub
 
-    Dim MaxStats = 32
+
 
 
     Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
@@ -68,17 +68,16 @@
         Buttonenabled(chaBox.Text, chaUp, chaDn)
     End Sub
     Sub Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
-
         If stat >= 17 Then
             a.IsEnabled = False
         End If
         If stat <= 17 Then
             a.IsEnabled = True
         End If
-        If stat <= 9 Then
+        If stat <= 11 Then
             b.IsEnabled = False
         End If
-        If stat >= 9 Then
+        If stat >= 11 Then
             b.IsEnabled = True
         End If
     End Sub
@@ -87,112 +86,110 @@
         result = (e - 10) \ 2
         Return result
     End Function
-    Function StatIncrease(ByVal i As Integer)
+    Function StatIncrease(ByVal i As Integer, ByRef b As TextBox)
         Dim result As Integer
         result = 0
         Select Case i
             Case 1 To 12
                 If (StatsObj.MAXSTATS - 1 >= 0) Then
                     result = i + 1
-
+                    b.Text = StatMod(result)
                     StatsObj.MAXSTATS = StatsObj.MAXSTATS - 1
-                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
             Case 13 To 15
                 If (StatsObj.MAXSTATS - 2 >= 0) Then
                     result = i + 1
-
+                    b.Text = StatMod(result)
                     StatsObj.MAXSTATS = StatsObj.MAXSTATS - 2
-                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
             Case 16
                 If (StatsObj.MAXSTATS - 3 >= 0) Then
                     result = i + 1
-
+                    b.Text = StatMod(result)
                     StatsObj.MAXSTATS = StatsObj.MAXSTATS - 3
-                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
             Case 17 To 18
                 If (StatsObj.MAXSTATS - 4 >= 0) Then
                     result = i + 1
-
+                    b.Text = StatMod(result)
                     StatsObj.MAXSTATS = StatsObj.MAXSTATS - 4
-                    pointsRemaining.Text = StatsObj.MAXSTATS.ToString
                 End If
         End Select
         Return result
     End Function
-    Function StatDecrease(ByVal i As Integer)
+
+    Function StatDecrease(ByVal i As Integer, ByRef b As TextBox)
         Dim result As Integer
         result = 0
         Select Case i
             Case 1 To 13
                 result = i - 1
-                MaxStats = MaxStats + 1
-                pointsRemaining.Text = MaxStats.ToString
+                b.Text = StatMod(result)
+                StatsObj.MAXSTATS = StatsObj.MAXSTATS + 1
             Case 14 To 16
                 result = i - 1
-                MaxStats = MaxStats + 2
-                pointsRemaining.Text = MaxStats.ToString
+                b.Text = StatMod(result)
+                StatsObj.MAXSTATS = StatsObj.MAXSTATS + 2
             Case 17
                 result = i - 1
-                MaxStats = MaxStats + 3
-                pointsRemaining.Text = MaxStats.ToString
+                b.Text = StatMod(result)
+                StatsObj.MAXSTATS = StatsObj.MAXSTATS + 3
             Case 18
-                i = i - 1
-
-                MaxStats = MaxStats + 4
-                pointsRemaining.Text = MaxStats.ToString
+                result = i - 1
+                b.Text = StatMod(result)
+                StatsObj.MAXSTATS = StatsObj.MAXSTATS + 4
         End Select
         Return result
     End Function
 
     Public Sub StrIncrease_Click(sender As Object, e As RoutedEventArgs) Handles strUp.Click
-        StatsObj.STR = StatIncrease(StatsObj.STR)
+        StatsObj.STR = StatIncrease(StatsObj.STR, strModBox)
     End Sub
 
     Public Sub StrDecrease_Click(sender As Object, e As RoutedEventArgs) Handles strDn.Click
-        StatsObj.STR = StatDecrease(StatsObj.STR)
+        StatsObj.STR = StatDecrease(StatsObj.STR, strModBox)
     End Sub
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles intUp.Click
-        StatsObj.INT = StatIncrease(StatsObj.INT)
+        StatsObj.INT = StatIncrease(StatsObj.INT, intModBox)
 
     End Sub
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles intDn.Click
-        StatsObj.INT = StatDecrease(StatsObj.INT)
+        StatsObj.INT = StatDecrease(StatsObj.INT, intModBox)
     End Sub
 
     Private Sub ConIncrease_Click(sender As Object, e As RoutedEventArgs) Handles conUp.Click
-        StatsObj.CON = StatIncrease(StatsObj.CON)
+        StatsObj.CON = StatIncrease(StatsObj.CON, conModBox)
     End Sub
 
     Private Sub ConDecrease_Click(sender As Object, e As RoutedEventArgs) Handles conDn.Click
-        StatsObj.CON = StatDecrease(StatsObj.CON)
+        StatsObj.CON = StatDecrease(StatsObj.CON, conModBox)
     End Sub
     Private Sub DexIncrease_Click(sender As Object, e As RoutedEventArgs) Handles dexUp.Click
-        StatsObj = StatIncrease(StatsObj.DEX)
+        StatsObj.DEX = StatIncrease(StatsObj.DEX, dexModBox)
     End Sub
     Private Sub DexDecrease_Click(sender As Object, e As RoutedEventArgs) Handles dexDn.Click
-        StatsObj = StatDecrease(StatsObj.DEX)
+        StatsObj.DEX = StatDecrease(StatsObj.DEX, dexModBox)
     End Sub
 
     Private Sub WisIncrease_Click(sender As Object, e As RoutedEventArgs) Handles wisUp.Click
-        StatsObj = StatIncrease(StatsObj.WIS)
+        StatsObj.WIS = StatIncrease(StatsObj.WIS, wisModBox)
     End Sub
 
     Private Sub WisDecrease_Click(sender As Object, e As RoutedEventArgs) Handles wisDn.Click
-        StatsObj = StatDecrease(StatsObj.WIS)
+        StatsObj.WIS = StatDecrease(StatsObj.WIS, wisModBox)
     End Sub
 
     Private Sub ChaIncrease_Click(sender As Object, e As RoutedEventArgs) Handles chaUp.Click
-        StatsObj = StatIncrease(StatsObj.CHA)
+        StatsObj.CHA = StatIncrease(StatsObj.CHA, chaModBox)
     End Sub
 
     Private Sub ChaDecrease_Click(sender As Object, e As RoutedEventArgs) Handles chaDn.Click
-        StatsObj = StatDecrease(StatsObj.CHA)
+        StatsObj.CHA = StatDecrease(StatsObj.CHA, chaModBox)
     End Sub
 
+    Private Sub StrDumpStat_Checked(sender As Object, e As RoutedEventArgs)
 
+    End Sub
 End Class
 

@@ -10,6 +10,7 @@ Public Class CharacterStats
     Private stat_WIS As Integer
     Private stat_CHA As Integer
     Private stat_MAXSTATS As Integer
+    Private stats As Array
 
     ' Event sender
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
