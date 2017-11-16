@@ -85,11 +85,46 @@ Class MainWindow
             b.IsEnabled = True
         End If
     End Sub
+
+    Sub DumpStatCalc(ByVal i As String, ByVal e As String)
+        StatsObj.Dump = DumpStat.SelectedItem
+        Select Case i
+            Case "STR"
+                StatsObj.STR = StatsObj.STR - 2
+            Case "DEX"
+                StatsObj.DEX = StatsObj.DEX - 2
+            Case "CON"
+                StatsObj.CON = StatsObj.CON - 2
+            Case "INT"
+                StatsObj.INT = StatsObj.INT - 2
+            Case "WIS"
+                StatsObj.WIS = StatsObj.WIS - 2
+            Case "CHA"
+                StatsObj.CHA = StatsObj.CHA - 2
+        End Select
+
+        Select Case e
+            Case "STR"
+                StatsObj.STR = StatsObj.STR + 2
+            Case "DEX"
+                StatsObj.DEX = StatsObj.DEX + 2
+            Case "CON"
+                StatsObj.CON = StatsObj.CON + 2
+            Case "INT"
+                StatsObj.INT = StatsObj.INT + 2
+            Case "WIS"
+                StatsObj.WIS = StatsObj.WIS + 2
+            Case "CHA"
+                StatsObj.CHA = StatsObj.CHA + 2
+        End Select
+    End Sub
+
     Function StatMod(ByVal e As Integer)
         Dim result As Integer
         result = (e - 10) \ 2
         Return result
     End Function
+
     Function StatIncrease(ByVal i As Integer, ByRef b As TextBox)
         Dim result As Integer
         result = 0
@@ -156,8 +191,8 @@ Class MainWindow
 
     Public Sub IntIncrease_Click(sender As Object, e As RoutedEventArgs) Handles intUp.Click
         StatsObj.INT = StatIncrease(StatsObj.INT, intModBox)
-
     End Sub
+
     Public Sub IntDecrease_Click(sender As Object, e As RoutedEventArgs) Handles intDn.Click
         StatsObj.INT = StatDecrease(StatsObj.INT, intModBox)
     End Sub
@@ -172,6 +207,7 @@ Class MainWindow
     Private Sub DexIncrease_Click(sender As Object, e As RoutedEventArgs) Handles dexUp.Click
         StatsObj.DEX = StatIncrease(StatsObj.DEX, dexModBox)
     End Sub
+
     Private Sub DexDecrease_Click(sender As Object, e As RoutedEventArgs) Handles dexDn.Click
         StatsObj.DEX = StatDecrease(StatsObj.DEX, dexModBox)
     End Sub
@@ -192,11 +228,8 @@ Class MainWindow
         StatsObj.CHA = StatDecrease(StatsObj.CHA, chaModBox)
     End Sub
 
-    Private Sub StrDumpStat_Checked(sender As Object, e As RoutedEventArgs)
-
+    Private Sub DumpStat_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles DumpStat.SelectionChanged
+        DumpStatCalc(DumpStat.SelectedItem, StatsObj.Dump)
     End Sub
-
-
-
 End Class
 

@@ -11,7 +11,8 @@ Public Class CharacterStats
     Private stat_WIS As Integer
     Private stat_CHA As Integer
     Private stat_MAXSTATS As Integer
-    Dim Dumpstats As Collection
+    Private stats_LIST As Collection
+    Private dump_Stat As String
 
     ' Event sender
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
@@ -29,16 +30,26 @@ Public Class CharacterStats
         stat_WIS = 10
         stat_CHA = 10
         stat_MAXSTATS = 32
-        Dumpstats = New Collection From {"STR", "INT", "DEX", "CON", "WIS", "CHA"}
+        stats_LIST = New Collection From {"STR", "INT", "DEX", "CON", "WIS", "CHA"}
+        dump_Stat = ""
 
     End Sub
 
-    Public Property DMP As Collection
+    Public Property Dump As String
         Get
-            Return Dumpstats
+            Return dump_Stat
+        End Get
+        Set(value As String)
+            dump_Stat = value
+        End Set
+    End Property
+
+    Public Property StatsList As Collection
+        Get
+            Return stats_LIST
         End Get
         Set(value As Collection)
-            Dumpstats = value
+            stats_LIST = value
         End Set
     End Property
 
