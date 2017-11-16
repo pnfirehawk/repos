@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="315.33" Width="503.981" 
+        Height="307.33" Width="544.569" 
         TextOptions.TextFormattingMode="Display" 
         SizeToContent="WidthAndHeight" 
         ScrollViewer.VerticalScrollBarVisibility="Auto" 
@@ -78,13 +78,13 @@
             <TabItem Header="Stats" x:Name="StatsTab">
                 <Grid Margin="0,0,-2.6,-0.4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition MinWidth="50" Width="74*"/>
-                        <ColumnDefinition MinWidth="25" Width="74*"/>
-                        <ColumnDefinition MinWidth="20" Width="74*"/>
-                        <ColumnDefinition MinWidth="60" Width="74*"/>
-                        <ColumnDefinition MinWidth="25" Width="129*"/>
+                        <ColumnDefinition MinWidth="50" Width="111*"/>
+                        <ColumnDefinition MinWidth="25" Width="111*"/>
+                        <ColumnDefinition MinWidth="20" Width="111*"/>
+                        <ColumnDefinition MinWidth="60" Width="111*"/>
+                        <ColumnDefinition MinWidth="25" Width="193*"/>
                         <ColumnDefinition MinWidth="20" Width="20"/>
-                        <ColumnDefinition MinWidth="21" Width="39*"/>
+                        <ColumnDefinition MinWidth="21" Width="59*"/>
 
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -97,65 +97,66 @@
                     </Grid.RowDefinitions>
                     <!-- Grouped by stat from here -->
                     <!-- STR stat -->
-                    <Label x:Name="strLbl" Content="STR" Grid.Row="0" Grid.Column="0" Margin="0,0,1.4,5" FontSize="10" FontWeight="Bold" />
-                    <TextBox x:Name="strBox" Text="{Binding Path=STR}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="0" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.6,0,1,5" RenderTransformOrigin="0.5,0.5" FontSize="14" />
-                    <StackPanel Grid.Row="0" Grid.Column="2" Width="Auto" Margin="1,0,0.4,5" Orientation="Horizontal">
+                    <Label x:Name="strLbl" Content="STR" Grid.Row="0" Grid.Column="0" Margin="0,0,1.333,5" FontSize="10" FontWeight="Bold" />
+                    <TextBox x:Name="strBox" Text="{Binding Path=STR}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="0" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.667,0,1,5" RenderTransformOrigin="0.5,0.5" FontSize="14" />
+                    <StackPanel Grid.Row="0" Grid.Column="2" Width="Auto" Margin="1,0,0.333,5" Orientation="Horizontal">
                         <Button x:Name="strUp" Content="+" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                         <Button x:Name="strDn" Content="-" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                     </StackPanel>
-                    <Label x:Name="strModLbl" Content="STR Mod" Grid.Row="0" Grid.Column="3" Margin="1.6,0,5,5" />
-                    <TextBox x:Name="strModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="0" Grid.Column="4" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="1.2,0,0,4.8" FontSize="14"/>
+                    <Label x:Name="strModLbl" Content="STR Mod" Grid.Row="0" Grid.Column="3" Margin="1.667,0,5,5" />
+                    <TextBox x:Name="strModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="0" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="34,0,32.333,5" FontSize="14"/>
 
                     <!-- INT stat -->
-                    <Label x:Name="intLbl" Content="INT" Grid.Row="2" Grid.Column="0" Margin="0,0,1.4,4.8" FontSize="10" FontWeight="Bold" />
-                    <TextBox x:Name="intBox" Text="{Binding Path=INT}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="2" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.6,0,1,4.8" FontSize="14"/>
-                    <StackPanel Grid.Row="2" Grid.Column="2" Width="Auto" Margin="1,0,0.4,4.8" Orientation="Horizontal">
+                    <Label x:Name="intLbl" Content="INT" Grid.Row="2" Grid.Column="0" Margin="0,0,1.333,5" FontSize="10" FontWeight="Bold" />
+                    <TextBox x:Name="intBox" Text="{Binding Path=INT}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="2" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.667,0,1,5" FontSize="14"/>
+                    <StackPanel Grid.Row="2" Grid.Column="2" Width="Auto" Margin="1,0,0.333,5" Orientation="Horizontal">
                         <Button x:Name="intUp" Content="+" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                         <Button x:Name="intDn" Content="-" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                     </StackPanel>
-                    <Label x:Name="intModLbl" Content="INT Mod" Grid.Row="2" Grid.Column="3" Margin="1.6,0,5,4.8" />
-                    <TextBox x:Name="intModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="2" Grid.Column="4" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="1.2,0.4,0,4.4" FontSize="14"/>
+                    <Label x:Name="intModLbl" Content="INT Mod" Grid.Row="2" Grid.Column="3" Margin="1.667,0,5,5" />
+                    <TextBox x:Name="intModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="2" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="34,0,32.333,4" FontSize="14"/>
 
                     <!-- DEX stat -->
-                    <Label x:Name="dexLbl" Content="DEX" Grid.Row="1" Grid.Column="0" Margin="0,0,1.4,5" FontSize="10" FontWeight="Bold" />
-                    <TextBox x:Name="dexBox" Text="{Binding Path=DEX}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="1" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.6,0,1,5" FontSize="14"/>
-                    <StackPanel Grid.Row="1" Grid.Column="2" Width="Auto" Margin="1,0,0.4,5" Orientation="Horizontal">
+                    <Label x:Name="dexLbl" Content="DEX" Grid.Row="1" Grid.Column="0" Margin="0,0,1.333,5" FontSize="10" FontWeight="Bold" />
+                    <TextBox x:Name="dexBox" Text="{Binding Path=DEX}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="1" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.667,0,1,5" FontSize="14"/>
+                    <StackPanel Grid.Row="1" Grid.Column="2" Width="Auto" Margin="1,0,0.333,5" Orientation="Horizontal">
                         <Button x:Name="dexUp" Content="+" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                         <Button x:Name="dexDn" Content="-" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                     </StackPanel>
-                    <Label x:Name="dexModLbl" Content="DEX Mod" Grid.Row="1" Grid.Column="3" Margin="1.6,0,2,5" />
-                    <TextBox x:Name="dexModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="1" Grid.Column="4" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="1.2,0.2,0,4.6" FontSize="14"/>
+                    <Label x:Name="dexModLbl" Content="DEX Mod" Grid.Row="1" Grid.Column="3" Margin="1.667,0,2,5" />
+                    <TextBox x:Name="dexModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="1" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="34,0,32.333,5" FontSize="14"/>
 
                     <!-- CON stat -->
-                    <Label x:Name="conLbl" Content="CON" Grid.Row="3" Grid.Column="0" Margin="0,0.2,1.4,4.8" FontSize="10" FontWeight="Bold" />
-                    <TextBox x:Name="conBox" Text="{Binding Path=CON}"  AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.6,0.2,1,4.8" FontSize="14"/>
-                    <StackPanel Grid.Row="3" Grid.Column="2" Width="Auto" Margin="1,0.2,0.4,4.8" Orientation="Horizontal">
+                    <Label x:Name="conLbl" Content="CON" Grid.Row="3" Grid.Column="0" Margin="0,0,1.333,5" FontSize="10" FontWeight="Bold" />
+                    <TextBox x:Name="conBox" Text="{Binding Path=CON}"  AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.667,0,1,5" FontSize="14"/>
+                    <StackPanel Grid.Row="3" Grid.Column="2" Width="Auto" Margin="1,0,0.333,5" Orientation="Horizontal">
                         <Button x:Name="conUp" Content="+" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                         <Button x:Name="conDn" Content="-" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                     </StackPanel>
-                    <Label x:Name="conModLbl" Content="CON Mod" Grid.Row="3" Grid.Column="3" Margin="1.6,1.2,2,4.8" />
-                    <TextBox x:Name="conModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="4" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="1.2,0.6,0,5.2" FontSize="14"/>
+                    <Label x:Name="conModLbl" Content="CON Mod" Grid.Row="3" Grid.Column="3" Margin="1.667,1,2,5" />
+                    <TextBox x:Name="conModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="34,10,32,5.333" FontSize="14"/>
 
                     <!-- WIS stat -->
-                    <Label x:Name="wisLbl" Content="WIS" Grid.Row="4" Grid.Column="0" Margin="0,0.2,1.4,4.8" FontSize="10" FontWeight="Bold" />
-                    <TextBox x:Name="wisBox" Text="{Binding Path=WIS}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="4" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.6,0.2,1,4.8" FontSize="14"/>
-                    <StackPanel Grid.Row="4" Grid.Column="2" Width="Auto" Margin="1,0.2,0.4,4.8" Orientation="Horizontal">
+                    <Label x:Name="wisLbl" Content="WIS" Grid.Row="4" Grid.Column="0" Margin="0,0,1.333,5" FontSize="10" FontWeight="Bold" />
+                    <TextBox x:Name="wisBox" Text="{Binding Path=WIS}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="4" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.667,0,1,5" FontSize="14"/>
+                    <StackPanel Grid.Row="4" Grid.Column="2" Width="Auto" Margin="1,0,0.333,5" Orientation="Horizontal">
                         <Button x:Name="wisUp" Content="+" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                         <Button x:Name="wisDn" Content="-" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                     </StackPanel>
-                    <Label x:Name="wisModLbl" Content="WIS Mod" Grid.Row="4" Grid.Column="3" Margin="1.6,0.2,5,4.8" />
-                    <TextBox x:Name="wisModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="3" Grid.Column="4" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="1.2,40.6,0,5" FontSize="14" Grid.RowSpan="2"/>
+                    <Label x:Name="wisModLbl" Content="WIS Mod" Grid.Row="4" Grid.Column="3" Margin="1.667,0,5,5" />
+                    <TextBox x:Name="wisModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="4" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="34,5,32.333,5" FontSize="14"/>
 
                     <!-- CHR stat -->
-                    <Label x:Name="chaLbl" Content="CHA" Grid.Row="5" Grid.Column="0" Margin="0,0.2,1.4,4.6" FontSize="10" FontWeight="Bold" />
-                    <TextBox x:Name="chaBox" Text="{Binding Path=CHA}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="5" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.6,0.2,1,4.6" FontSize="14"/>
-                    <StackPanel Grid.Row="5" Grid.Column="2" Width="Auto" Margin="1,0.2,0.4,4.6" Orientation="Horizontal">
+                    <Label x:Name="chaLbl" Content="CHA" Grid.Row="5" Grid.Column="0" Margin="0,0,1.333,4.667" FontSize="10" FontWeight="Bold" />
+                    <TextBox x:Name="chaBox" Text="{Binding Path=CHA}" AcceptsReturn="False" IsReadOnly="True" Grid.Row="5" Grid.Column="1" Width="Auto" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="2.667,0,1,4.667" FontSize="14"/>
+                    <StackPanel Grid.Row="5" Grid.Column="2" Width="Auto" Margin="1,0,0.333,4.667" Orientation="Horizontal">
                         <Button x:Name="chaUp" Content="+" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                         <Button x:Name="chaDn" Content="-" MinHeight="10" MinWidth="16" Width="Auto" FontWeight="Bold" />
                     </StackPanel>
-                    <Label x:Name="chaModLbl" Content="CHA Mod" Grid.Row="5" Grid.Column="3" Margin="1.6,0.2,5,4.6" />
-                    <TextBox x:Name="chaModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="5" Grid.Column="4" Width="128" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="1.2,0,0,4.8" FontSize="14"/>
-                    <ComboBox x:Name="DumpStat" ItemsSource="{Binding Path=DMP}" Height="Auto" Width="Auto" Grid.Row="0" Grid.Column="5" Margin="19.6,0,0.6,40.6" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+                    <Label x:Name="chaModLbl" Content="CHA Mod" Grid.Row="5" Grid.Column="3" Margin="1.667,0,5,4.667" />
+                    <TextBox x:Name="chaModBox" Text="0" AcceptsReturn="False" IsReadOnly="True" Grid.Row="5" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Margin="34,0,32.333,4.667" FontSize="14"/>
+                    <ComboBox x:Name="DumpStat" ItemsSource="{Binding Path=DMP}" Height="Auto" Width="Auto" Grid.Row="1" Grid.Column="5" Margin="19.667,0,0.667,0" Grid.ColumnSpan="2"  />
+                    <Label Content="Label" Grid.Column="6" HorizontalAlignment="Left" Margin="1.667,3,0,0" VerticalAlignment="Top" Height="27" Width="37"/>
                 </Grid>
             </TabItem>
 
