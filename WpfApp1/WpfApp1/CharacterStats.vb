@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Collections.ObjectModel
 Public Class CharacterStats
     Implements INotifyPropertyChanged
 
@@ -10,7 +11,7 @@ Public Class CharacterStats
     Private stat_WIS As Integer
     Private stat_CHA As Integer
     Private stat_MAXSTATS As Integer
-    Private stats As Array
+    Dim Dumpstats As Collection
 
     ' Event sender
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
@@ -28,7 +29,21 @@ Public Class CharacterStats
         stat_WIS = 10
         stat_CHA = 10
         stat_MAXSTATS = 32
+        Dumpstats = New Collection From {"STR", "INT", "DEX", "CON", "WIS", "CHA"}
+
     End Sub
+
+    Public Property DMP As Collection
+        Get
+            Return Dumpstats
+        End Get
+        Set(value As Collection)
+            Dumpstats = value
+        End Set
+    End Property
+
+
+
 
     ' bIGlock o' public properties
     Public Property STR As Integer
@@ -114,4 +129,6 @@ Public Class CharacterStats
             End If
         End Set
     End Property
+
+
 End Class

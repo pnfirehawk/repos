@@ -1,4 +1,7 @@
-﻿Class MainWindow
+﻿
+Imports System.Collections.ObjectModel
+
+Class MainWindow
     Dim StatsObj As CharacterStats
 
     Public Sub New()
@@ -10,6 +13,7 @@
         StatsObj = New CharacterStats()
         StatsTab.DataContext = StatsObj
         StatusBar.DataContext = StatsObj
+        DumpStat.DataContext = StatsObj
     End Sub
 
 
@@ -191,5 +195,8 @@
     Private Sub StrDumpStat_Checked(sender As Object, e As RoutedEventArgs)
 
     End Sub
+
+
+
 End Class
 
