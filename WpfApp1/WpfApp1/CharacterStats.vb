@@ -11,7 +11,13 @@ Public Class CharacterStats
     Private stat_WIS As Integer
     Private stat_CHA As Integer
     Private stat_MAXSTATS As Integer
-    Dim Dumpstats As Collection
+    Private stats_LIST As Collection
+    Private dump_Stat As String
+    Private race_LIST As Collection
+    Private paladin_ABILFEATURE As Collection
+    Private mage_ABILFEATURE As Collection
+    Private secondarystat_LIST As Collection
+
 
     ' Event sender
     Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
@@ -29,23 +35,87 @@ Public Class CharacterStats
         stat_WIS = 10
         stat_CHA = 10
         stat_MAXSTATS = 32
-        Dumpstats = New Collection From {"STR", "INT", "DEX", "CON", "WIS", "CHA"}
+        stats_LIST = New Collection From {"STR", "INT", "DEX", "CON", "WIS", "CHA"}
+        dump_Stat = ""
+        race_LIST = New Collection From {"Human", "Dwarf", "Bugbear"}
+        paladin_ABILFEATURE = New Collection From {"Lay on hands", "Heal", "Smite"}
+        mage_ABILFEATURE = New Collection From {"Magic Missile", "Fireball", "Ray of Frost"}
+        secondarystat_LIST = New Collection From {""}
+
+
+
 
     End Sub
 
-    Public Property DMP As Collection
+    ' big ol block of public properties
+    Public Property RaceStatBonusList As Collection
         Get
-            Return Dumpstats
+            Return secondarystat_LIST
         End Get
         Set(value As Collection)
-            Dumpstats = value
+            If (Not value.Equals(secondarystat_LIST)) Then
+                secondarystat_LIST = value
+                NotifyPropertyChanged("RaceStatBonusList")
+            End If
+        End Set
+    End Property
+    Public Property RaceList As Collection
+        Get
+            Return race_LIST
+        End Get
+        Set(value As Collection)
+            If (Not value.Equals(race_LIST)) Then
+                race_LIST = value
+                NotifyPropertyChanged("RaceList")
+            End If
+        End Set
+    End Property
+    Public Property Mage As Collection
+        Get
+            Return mage_ABILFEATURE
+        End Get
+        Set(value As Collection)
+            If (Not value.Equals(mage_ABILFEATURE)) Then
+                mage_ABILFEATURE = value
+                NotifyPropertyChanged("Mage")
+            End If
         End Set
     End Property
 
+    Public Property Paladin As Collection
+        Get
+            Return paladin_ABILFEATURE
+        End Get
+        Set(value As Collection)
+            If (Not value.Equals(paladin_ABILFEATURE)) Then
+                paladin_ABILFEATURE = value
+                NotifyPropertyChanged("Paladin")
+            End If
+        End Set
+    End Property
 
+    Public Property Dump As String
+        Get
+            Return dump_Stat
+        End Get
+        Set(value As String)
+            If (Not value.Equals(dump_Stat)) Then
+                dump_Stat = value
+                NotifyPropertyChanged("Dump")
+            End If
+        End Set
+    End Property
 
+    Public Property StatsList As Collection
+        Get
+            Return stats_LIST
+        End Get
+        Set(value As Collection)
+            stats_LIST = value
+            NotifyPropertyChanged("StatsList")
+        End Set
+    End Property
 
-    ' bIGlock o' public properties
     Public Property STR As Integer
         Get
             Return stat_STR
@@ -129,6 +199,4 @@ Public Class CharacterStats
             End If
         End Set
     End Property
-
-
 End Class
