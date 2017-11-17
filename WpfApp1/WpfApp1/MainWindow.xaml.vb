@@ -11,32 +11,21 @@ Class MainWindow
 
         ' Add any initialization after the InitializeComponent() call.
         StatsObj = New CharacterStats()
-        StatsTab.DataContext = StatsObj
-        StatusBar.DataContext = StatsObj
-        DumpStat.DataContext = StatsObj
+        CharacterCreator.DataContext = StatsObj
+
+    End Sub
+    Sub RacialSecondaryStat(ByVal i As String)
+        Select Case i
+            Case "Human"
+                StatsObj.RaceStatBonusList = StatsObj.StatsList
+            Case "Dwarf"
+
+        End Select
+
     End Sub
 
-
-
-
-    Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        Dim x = Race.SelectedIndex
-        Select Case x
-            Case Is = 0
-                [Class].Items.Clear()
-                [Class].Items.Add("Class 1")
-                [Class].Items.Add("Class 2")
-            Case Is = 1
-                [Class].Items.Clear()
-                [Class].Items.Add("Class 3")
-                [Class].Items.Add("Class 4")
-            Case Is = 2
-                [Class].Items.Clear()
-                [Class].Items.Add("Class 5")
-                [Class].Items.Add("Class 6")
-            Case Else
-                [Class].Items.Clear()
-        End Select
+    Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles Race.SelectionChanged
+        RacialSecondaryStat(Race.SelectedItem)
     End Sub
 
     Private Sub Combobox_SelectionChanged_1(sender As Object, e As SelectionChangedEventArgs)
@@ -45,31 +34,31 @@ Class MainWindow
     End Sub
     Public Sub strBox_TextChanged(sender As Object, e As RoutedEventArgs) Handles strBox.TextChanged
 
-        Buttonenabled(strBox.Text, strUp, strDn)
+        Buttonenabled(StatsObj.STR, strUp, strDn)
     End Sub
 
     Public Sub Intstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles intBox.TextChanged
 
-        Buttonenabled(intBox.Text, intUp, intDn)
+        Buttonenabled(StatsObj.INT, intUp, intDn)
     End Sub
 
     Public Sub Constat_TextChanged(sender As Object, e As RoutedEventArgs) Handles conBox.TextChanged
 
-        Buttonenabled(conBox.Text, conUp, conDn)
+        Buttonenabled(StatsObj.CON, conUp, conDn)
     End Sub
 
     Public Sub Dexstat_TextChanged(sender As Object, e As RoutedEventArgs) Handles dexBox.TextChanged
 
-        Buttonenabled(dexBox.Text, dexUp, dexDn)
+        Buttonenabled(StatsObj.DEX, dexUp, dexDn)
     End Sub
 
     Public Sub WisStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles wisBox.TextChanged
 
-        Buttonenabled(wisBox.Text, wisUp, wisDn)
+        Buttonenabled(StatsObj.WIS, wisUp, wisDn)
     End Sub
     Public Sub ChasStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles chaBox.TextChanged
 
-        Buttonenabled(chaBox.Text, chaUp, chaDn)
+        Buttonenabled(StatsObj.CHA, chaUp, chaDn)
     End Sub
     Sub Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
         If stat >= 17 Then
@@ -102,7 +91,6 @@ Class MainWindow
             Case "CHA"
                 StatsObj.CHA = StatsObj.CHA - 2
         End Select
-
         Select Case e
             Case "STR"
                 StatsObj.STR = StatsObj.STR + 2
@@ -173,7 +161,7 @@ Class MainWindow
                 result = i - 1
                 b.Text = StatMod(result)
                 StatsObj.MAXSTATS = StatsObj.MAXSTATS + 3
-            Case 18
+            Case 18 To 19
                 result = i - 1
                 b.Text = StatMod(result)
                 StatsObj.MAXSTATS = StatsObj.MAXSTATS + 4
@@ -231,5 +219,7 @@ Class MainWindow
     Private Sub DumpStat_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles DumpStat.SelectionChanged
         DumpStatCalc(DumpStat.SelectedItem, StatsObj.Dump)
     End Sub
+
+
 End Class
 
