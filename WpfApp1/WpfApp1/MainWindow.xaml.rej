@@ -1,0 +1,9 @@
+diff a/WpfApp1/WpfApp1/MainWindow.xaml b/WpfApp1/WpfApp1/MainWindow.xaml	(rejected hunks)
+@@ -6,7 +6,6 @@
+         xmlns:local="clr-namespace:WpfApp1"
+         mc:Ignorable="d"
+         Title="MainWindow" 
+-        Height="307.33" Width="544.569" 
+         Height="304.13" Width="395.769" 
+         TextOptions.TextFormattingMode="Display" 
+         SizeToContent="WidthAndHeight" 
