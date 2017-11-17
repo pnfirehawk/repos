@@ -13,7 +13,7 @@ Class MainWindow
         StatsObj = New CharacterStats()
         StatsTab.DataContext = StatsObj
         StatusBar.DataContext = StatsObj
-        DumpStat.DataContext = StatsObj
+        Dumpstat.DataContext = StatsObj
     End Sub
 
 
@@ -146,6 +146,39 @@ Class MainWindow
         Return result
     End Function
 
+    Sub Dumpstatchange(ByVal i As String, ByVal e As Integer)
+        If i.Equals("STR") Then
+            StatsObj.STR = StatsObj.STR - 2
+        Else
+            StatsObj.STR = e
+        End If
+        If i.Equals("INT") Then
+            StatsObj.INT = StatsObj.INT - 2
+        Else
+            StatsObj.INT = e
+        End If
+        If i.Equals("DEX") Then
+            StatsObj.DEX = StatsObj.DEX - 2
+        Else
+            StatsObj.DEX = e
+        End If
+        If i.Equals("CON") Then
+            StatsObj.CON = StatsObj.CON - 2
+        Else
+            StatsObj.CON = e
+        End If
+        If i.Equals("WIS") Then
+            StatsObj.WIS = StatsObj.WIS - 2
+        Else
+            StatsObj.WIS = e
+        End If
+        If i.Equals("CHA") Then
+            StatsObj.CHA = StatsObj.CHA - 2
+        Else
+            StatsObj.CHA = e
+        End If
+    End Sub
+
     Public Sub StrIncrease_Click(sender As Object, e As RoutedEventArgs) Handles strUp.Click
         StatsObj.STR = StatIncrease(StatsObj.STR, strModBox)
     End Sub
@@ -196,7 +229,9 @@ Class MainWindow
 
     End Sub
 
-
+    Private Sub DumpStat_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles DumpStat.SelectionChanged
+        Dumpstatchange(DumpStat.SelectedItem, 10)
+    End Sub
 
 End Class
 
