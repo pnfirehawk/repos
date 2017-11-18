@@ -1,24 +1,27 @@
-﻿
+﻿Imports System.Xml
 Imports System.Collections.ObjectModel
-
 Class MainWindow
     Dim StatsObj As CharacterStats
-
+    Dim MasterRaceList As XmlDocument
     Public Sub New()
-
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
         StatsObj = New CharacterStats()
         CharacterCreator.DataContext = StatsObj
-
+        MasterRaceList = New XmlDocument()
+        MasterRaceList.Load(My.Resources.Racelistbonus.ToString)
     End Sub
     Sub RacialSecondaryStat(ByVal i As String)
         Select Case i
             Case "Human"
+                StatsObj.RaceStatBonusList.Clear()
                 StatsObj.RaceStatBonusList = StatsObj.StatsList
             Case "Dwarf"
+                StatsObj.STR = StatsObj.STR + 2
+                StatsObj.RaceStatBonusList.Add("STR")
+                StatsObj.RaceStatBonusList.Add("DEX")
 
         End Select
 
@@ -222,4 +225,6 @@ Class MainWindow
 
 
 End Class
+
+
 

@@ -59,5 +59,32 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        '''&lt;MasterRaceList&gt;
+        '''  &lt;Race Name=&quot;RaceName&quot;&gt;
+        '''    &lt;PrimaryStat&gt;
+        '''      &lt;Stat Name=&quot;StatName&quot; /&gt;
+        '''    &lt;/PrimaryStat&gt;
+        '''    &lt;SecondaryStat&gt;
+        '''      &lt;Stat Name=&quot;StatName1&quot; /&gt;
+        '''      &lt;Stat Name=&quot;StatName1&quot; /&gt;
+        '''    &lt;/SecondaryStat&gt;
+        '''    &lt;FeaturePowers&gt;
+        '''      &lt;Power Name=&quot;PowerName&quot;&gt;
+        '''        &lt;Description&gt;This is a Feature Power!&lt;/Description&gt;
+        '''      &lt;/Power&gt;
+        '''    &lt;/FeaturePowers&gt;
+        '''    &lt;SubRace Name=&quot;SubRaceName&quot;&gt;
+        '''      &lt;PrimaryStat&gt;
+        '''        &lt;Stat Name=&quot;StatName&quot; /&gt;
+        '''      &lt; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Racelistbonus() As String
+            Get
+                Return ResourceManager.GetString("Racelistbonus", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

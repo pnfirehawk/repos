@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Collections.ObjectModel
+Imports System.Windows.Data.XmlDataProvider
 Public Class CharacterStats
     Implements INotifyPropertyChanged
 
@@ -17,6 +18,8 @@ Public Class CharacterStats
     Private paladin_ABILFEATURE As Collection
     Private mage_ABILFEATURE As Collection
     Private secondarystat_LIST As Collection
+
+
 
 
     ' Event sender
@@ -41,6 +44,7 @@ Public Class CharacterStats
         paladin_ABILFEATURE = New Collection From {"Lay on hands", "Heal", "Smite"}
         mage_ABILFEATURE = New Collection From {"Magic Missile", "Fireball", "Ray of Frost"}
         secondarystat_LIST = New Collection From {""}
+
 
 
 

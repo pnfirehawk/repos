@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MasterRaceList>
+  <Race Name="RaceName">
+    <PrimaryStat>
+      <Stat Name="StatName" />
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat Name="StatName1" />
+      <Stat Name="StatName1" />
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+</MasterRaceList>
