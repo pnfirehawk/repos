@@ -1,34 +1,39 @@
 ﻿Imports System.Xml
 Imports System.Collections.ObjectModel
+Imports System.IO
+Imports System.Reflection
+
+
 Class MainWindow
     Dim StatsObj As CharacterStats
     Dim MasterRaceList As XmlDocument
     Public Sub New()
-        ' This call is required by the designer.
+
         InitializeComponent()
+        ' This call is required by the designer.
 
         ' Add any initialization after the InitializeComponent() call.
         StatsObj = New CharacterStats()
         CharacterCreator.DataContext = StatsObj
         MasterRaceList = New XmlDocument()
-        MasterRaceList.Load(My.Resources.Racelistbonus.ToString)
-    End Sub
-    Sub RacialSecondaryStat(ByVal i As String)
-        Select Case i
-            Case "Human"
-                StatsObj.RaceStatBonusList.Clear()
-                StatsObj.RaceStatBonusList = StatsObj.StatsList
-            Case "Dwarf"
-                StatsObj.STR = StatsObj.STR + 2
-                StatsObj.RaceStatBonusList.Add("STR")
-                StatsObj.RaceStatBonusList.Add("DEX")
+        MasterRaceList.LoadXml(My.Resources.Racelistbonus.ToString)
 
-        End Select
+
+    End Sub
+
+    Private Function GetMasterRaceList() As XmlDocument
+        Return MasterRaceList
+    End Function
+
+    Sub RacialSecondaryStat(ByVal i As String)
+
+
+
 
     End Sub
 
     Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles Race.SelectionChanged
-        RacialSecondaryStat(Race.SelectedItem)
+
     End Sub
 
     Private Sub Combobox_SelectionChanged_1(sender As Object, e As SelectionChangedEventArgs)
@@ -222,8 +227,6 @@ Class MainWindow
     Private Sub DumpStat_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles DumpStat.SelectionChanged
         DumpStatCalc(DumpStat.SelectedItem, StatsObj.Dump)
     End Sub
-
-
 End Class
 
 
