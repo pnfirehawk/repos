@@ -2,11 +2,14 @@
 Imports System.Collections.ObjectModel
 Imports System.IO
 Imports System.Reflection
+Imports System.ComponentModel
 
 
 Class MainWindow
+    Implements INotifyPropertyChanged
     Dim StatsObj As CharacterStats
     Dim MasterRaceList As XmlDocument
+
     Public Sub New()
 
         InitializeComponent()
@@ -17,8 +20,13 @@ Class MainWindow
         CharacterCreator.DataContext = StatsObj
         MasterRaceList = New XmlDocument()
         MasterRaceList.LoadXml(My.Resources.Racelistbonus.ToString)
+    End Sub
 
 
+    Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
+
+    Private Sub NotifyPropertyChanged(ByVal propertyName As String)
+        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
     End Sub
 
     Private Function GetMasterRaceList() As XmlDocument
@@ -27,14 +35,29 @@ Class MainWindow
 
     Sub RacialSecondaryStat(ByVal i As String)
 
-
-
-
     End Sub
+
+
 
     Private Sub Race_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles Race.SelectionChanged
+        Dim selectedValue = ""
+        Select Case Race.SelectedValue
+            Case "Genasi"
+                selectedValue = "Genasi"
+            Case "Half-Breed"
+                selectedValue = "Half-Breed"
+        End Select
+        Select Case selectedValue
+            Case "Genasi"
+                SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Genasi/SubRace/Name")
+            Case "Half-Breed"
+                SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Half-Breed/SubRace/Name")
+            Case Else
+                SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Bugbear/SubRace/Name")
+        End Select
 
     End Sub
+
 
     Private Sub Combobox_SelectionChanged_1(sender As Object, e As SelectionChangedEventArgs)
 
@@ -68,6 +91,24 @@ Class MainWindow
 
         Buttonenabled(StatsObj.CHA, chaUp, chaDn)
     End Sub
+
+    Sub subracelist(ByVal e As String)
+        Dim selectedValue = ""
+        Select Case Race.SelectedValue
+            Case "Genasi"
+                selectedValue = "Genasi"
+            Case "Half-Breed"
+                selectedValue = "Half-Breed"
+        End Select
+        Select Case Race.SelectedValue
+            Case "Genasi"
+                SubRace.ItemsSource = "{Binding Source={StaticResource RaceData}, XPath=./Race/Genasi/SubRace/Name }"
+            Case "Half-Breed"
+                SubRace.ItemsSource = "{Binding Source={StaticResource RaceData}, XPath=./Race/Half-Breed/SubRace/Name }"
+
+        End Select
+    End Sub
+
     Sub Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
         If stat >= 17 Then
             a.IsEnabled = False
