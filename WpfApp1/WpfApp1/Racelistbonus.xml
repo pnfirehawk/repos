@@ -56,7 +56,7 @@
         <Description>This is a Feature Power!</Description>
       </Power>
     </FeaturePowers>
-    <SubRace Name="SubRaceName">
+    <Centaur Name="SubRaceName">
       <PrimaryStat>
         <Stat Name="StatName" />
       </PrimaryStat>
@@ -69,7 +69,7 @@
           <Description>This is a Feature Power!</Description>
         </Power>
       </FeaturePowers>
-    </SubRace>
+    </Centaur>
   </Race>
   <Race>
     <Name>Changeling</Name>
@@ -136,35 +136,6 @@
     </PrimaryStat>
     <SecondaryStat>
       <Stat Name="Strength" />
-      <Stat Name="Charisma" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race>
-    <Name>Drow</Name>
-    <PrimaryStat>
-      <Stat Name="Dexterity" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="Wisdom" />
       <Stat Name="Charisma" />
     </SecondaryStat>
     <FeaturePowers>
@@ -663,8 +634,7 @@
         </FeaturePowers>
       </SubRace>
       <SubRace>
-        <Name>Half Centaur
-</Name>
+        <Name>Half Centaur</Name>
         <PrimaryStat>
           <Stat>
             <Name>Dexterity</Name>
@@ -808,15 +778,349 @@
     <Name>Human</Name>
     <PrimaryStat>
       <Stat>
-        <Name>StatName</Name>
+        <Name>N/A</Name>
+        <Name>Strength</Name>
+        <Name>Constitution</Name>
+        <Name>Intelligence</Name>
+        <Name>Dexterity</Name>
+        <Name>Wisdom</Name>
+        <Name>Charisma</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>N/A</Name>
+        <Name>Strength</Name>
+        <Name>Constitution</Name>
+        <Name>Intelligence</Name>
+        <Name>Dexterity</Name>
+        <Name>Wisdom</Name>
+        <Name>Charisma</Name>
+      </Stat>
+      <Stat2>
+        <Name>N/A</Name>
+        <Name>Strength</Name>
+        <Name>Constitution</Name>
+        <Name>Intelligence</Name>
+        <Name>Dexterity</Name>
+        <Name>Wisdom</Name>
+        <Name>Charisma</Name>
+      </Stat2>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Ichora</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Dexterity</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Kalashtar</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Intelligence</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Kanaka Nui</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Strength</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Kobold</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Dexterity</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Lamia</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Dexterity</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Intelligence</Name>
+      </Stat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Merfolk</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Dexterity</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Minotaur</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Strength</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Orc</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Dexterity</Name>
       </Stat>
     </PrimaryStat>
     <SecondaryStat>
       <Stat>
         <Name>Strength</Name>
+      </Stat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Pixie</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Dexterity</Name>
+      </Stat>
+      <Stat>
         <Name>Intelligence</Name>
       </Stat>
-      <Stat Name="StatName1" />
     </SecondaryStat>
     <FeaturePowers>
       <Power Name="PowerName">
@@ -838,9 +1142,82 @@
       </FeaturePowers>
     </SubRace>
   </Race>
-  <Race Name="RaceName">
+  <Race>
+    <Name>Scarabis</Name>
     <PrimaryStat>
-      <Stat Name="StatName" />
+      <Stat>
+        <Name>Strength</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Shardmind</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
+    </PrimaryStat>
+    <SecondaryStat>
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
+    </SecondaryStat>
+    <FeaturePowers>
+      <Power Name="PowerName">
+        <Description>This is a Feature Power!</Description>
+      </Power>
+    </FeaturePowers>
+    <SubRace Name="SubRaceName">
+      <PrimaryStat>
+        <Stat Name="StatName" />
+      </PrimaryStat>
+      <SecondaryStat>
+        <Stat Name="StatName1" />
+        <Stat Name="StatName1" />
+      </SecondaryStat>
+      <FeaturePowers>
+        <Power Name="PowerName">
+          <Description>This is a Feature Power!</Description>
+        </Power>
+      </FeaturePowers>
+    </SubRace>
+  </Race>
+  <Race>
+    <Name>Simian</Name>
+    <PrimaryStat>
+      <Stat>
+        <Name>Intelligence</Name>
+      </Stat>
     </PrimaryStat>
     <SecondaryStat>
       <Stat Name="StatName1" />
@@ -851,28 +1228,77 @@
         <Description>This is a Feature Power!</Description>
       </Power>
     </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
+    <Simian>
+      <SubRace>
+        <Name>Ring Tail</Name>
+        <PrimaryStat>
+          <Stat>
+            <Name>Dexterity</Name>
+          </Stat>
+        </PrimaryStat>
+        <SecondaryStat>
+          <Stat>
+            <Name>Charisma</Name>
+          </Stat>
+        </SecondaryStat>
+        <FeaturePowers>
+          <Power Name="PowerName">
+            <Description>This is a Feature Power!</Description>
+          </Power>
+        </FeaturePowers>
+      </SubRace>
+      <SubRace>
+        <Name>Ape</Name>
+        <PrimaryStat>
+          <Stat>
+            <Name>Strength</Name>
+          </Stat>
+        </PrimaryStat>
+        <SecondaryStat>
+          <Stat>
+            <Name>Constitution</Name>
+          </Stat>
+        </SecondaryStat>
+        <FeaturePowers>
+          <Power Name="PowerName">
+            <Description>This is a Feature Power!</Description>
+          </Power>
+        </FeaturePowers>
+      </SubRace>
+      <SubRace>
+        <Name>Monkey</Name>
+        <PrimaryStat>
+          <Stat>
+            <Name>Dexterity</Name>
+          </Stat>
+        </PrimaryStat>
+        <SecondaryStat>
+          <Stat>
+            <Name>Wisdom</Name>
+          </Stat>
+        </SecondaryStat>
+        <FeaturePowers>
+          <Power Name="PowerName">
+            <Description>This is a Feature Power!</Description>
+          </Power>
+        </FeaturePowers>
+      </SubRace>
+    </Simian>
   </Race>
-  <Race Name="RaceName">
+  <Race>
+    <Name>Thri-Kreen</Name>
     <PrimaryStat>
-      <Stat Name="StatName" />
+      <Stat>
+        <Name>Dexterity</Name>
+      </Stat>
     </PrimaryStat>
     <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
+      <Stat>
+        <Name>Strength</Name>
+      </Stat>
+      <Stat>
+        <Name>Wisdom</Name>
+      </Stat>
     </SecondaryStat>
     <FeaturePowers>
       <Power Name="PowerName">
@@ -894,13 +1320,20 @@
       </FeaturePowers>
     </SubRace>
   </Race>
-  <Race Name="RaceName">
+  <Race>
+    <Name>Tiefling</Name>
     <PrimaryStat>
-      <Stat Name="StatName" />
+      <Stat>
+        <Name>Charisma</Name>
+      </Stat>
     </PrimaryStat>
     <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
+      <Stat>
+        <Name>Intelligence</Name>
+      </Stat>
     </SecondaryStat>
     <FeaturePowers>
       <Power Name="PowerName">
@@ -922,13 +1355,20 @@
       </FeaturePowers>
     </SubRace>
   </Race>
-  <Race Name="RaceName">
+  <Race>
+    <Name>Warforged</Name>
     <PrimaryStat>
-      <Stat Name="StatName" />
+      <Stat>
+        <Name>Constitution</Name>
+      </Stat>
     </PrimaryStat>
     <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
+      <Stat>
+        <Name>Strength</Name>
+      </Stat>
+      <Stat>
+        <Name>Intelligence</Name>
+      </Stat>
     </SecondaryStat>
     <FeaturePowers>
       <Power Name="PowerName">
@@ -950,259 +1390,8 @@
       </FeaturePowers>
     </SubRace>
   </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
-    <PrimaryStat>
-      <Stat Name="StatName" />
-    </PrimaryStat>
-    <SecondaryStat>
-      <Stat Name="StatName1" />
-      <Stat Name="StatName1" />
-    </SecondaryStat>
-    <FeaturePowers>
-      <Power Name="PowerName">
-        <Description>This is a Feature Power!</Description>
-      </Power>
-    </FeaturePowers>
-    <SubRace Name="SubRaceName">
-      <PrimaryStat>
-        <Stat Name="StatName" />
-      </PrimaryStat>
-      <SecondaryStat>
-        <Stat Name="StatName1" />
-        <Stat Name="StatName1" />
-      </SecondaryStat>
-      <FeaturePowers>
-        <Power Name="PowerName">
-          <Description>This is a Feature Power!</Description>
-        </Power>
-      </FeaturePowers>
-    </SubRace>
-  </Race>
-  <Race Name="RaceName">
+  <Race>
+    <Name>Zoanthrope</Name>
     <PrimaryStat>
       <Stat Name="StatName" />
     </PrimaryStat>

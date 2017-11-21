@@ -6,14 +6,14 @@ Imports System.ComponentModel
 
 
 Class MainWindow
-    Implements INotifyPropertyChanged
+
     Dim StatsObj As CharacterStats
     Dim MasterRaceList As XmlDocument
 
     Public Sub New()
 
-        InitializeComponent()
         ' This call is required by the designer.
+        InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
         StatsObj = New CharacterStats()
@@ -22,18 +22,9 @@ Class MainWindow
         MasterRaceList.LoadXml(My.Resources.Racelistbonus.ToString)
     End Sub
 
+    Sub filterhalfbreed()
 
-    Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 
-    Private Sub NotifyPropertyChanged(ByVal propertyName As String)
-        RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-    End Sub
-
-    Private Function GetMasterRaceList() As XmlDocument
-        Return MasterRaceList
-    End Function
-
-    Sub RacialSecondaryStat(ByVal i As String)
 
     End Sub
 
@@ -46,12 +37,19 @@ Class MainWindow
                 selectedValue = "Genasi"
             Case "Half-Breed"
                 selectedValue = "Half-Breed"
+            Case "Simian"
+                selectedValue = "Simian"
         End Select
         Select Case selectedValue
             Case "Genasi"
                 SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Genasi/SubRace/Name")
             Case "Half-Breed"
                 SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Half-Breed/SubRace/Name")
+                Halfbreed.Visibility = Visibility.Visible
+                HRace.Visibility = Visibility.Visible
+                Halfbreed.ItemsSource = MasterRaceList.SelectNodes("//Race/Half-Breed/SubRace/Name")
+            Case "Simian"
+                SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Simian/SubRace/Name")
             Case Else
                 SubRace.ItemsSource = MasterRaceList.SelectNodes("//Race/Bugbear/SubRace/Name")
         End Select
@@ -90,23 +88,6 @@ Class MainWindow
     Public Sub ChasStat_TextChanged(sender As Object, e As RoutedEventArgs) Handles chaBox.TextChanged
 
         Buttonenabled(StatsObj.CHA, chaUp, chaDn)
-    End Sub
-
-    Sub subracelist(ByVal e As String)
-        Dim selectedValue = ""
-        Select Case Race.SelectedValue
-            Case "Genasi"
-                selectedValue = "Genasi"
-            Case "Half-Breed"
-                selectedValue = "Half-Breed"
-        End Select
-        Select Case Race.SelectedValue
-            Case "Genasi"
-                SubRace.ItemsSource = "{Binding Source={StaticResource RaceData}, XPath=./Race/Genasi/SubRace/Name }"
-            Case "Half-Breed"
-                SubRace.ItemsSource = "{Binding Source={StaticResource RaceData}, XPath=./Race/Half-Breed/SubRace/Name }"
-
-        End Select
     End Sub
 
     Sub Buttonenabled(ByVal stat As Integer, ByRef a As Button, ByRef b As Button)
@@ -267,6 +248,16 @@ Class MainWindow
 
     Private Sub DumpStat_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles DumpStat.SelectionChanged
         DumpStatCalc(DumpStat.SelectedItem, StatsObj.Dump)
+    End Sub
+
+    Private Sub SubRace_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles SubRace.SelectionChanged
+
+    End Sub
+
+    Private Sub Halfbreed_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles Halfbreed.SelectionChanged
+        If SubRace.SelectedValue = Halfbreed.SelectedValue Then
+            Halfbreed.SelectedIndex = -1
+        End If
     End Sub
 End Class
 
